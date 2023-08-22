@@ -1,0 +1,162 @@
+{% load static %}
+<!doctype html>
+<html lang="de" class="h-100" data-bs-theme="dark">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="Ausstellungen des Hellenic Airforce Museums">
+        <meta name="author" content="Ioannis Kasionis und Bootstrap-Mitarbeiter">
+		<title>Museum Ausstellungen</title>
+
+		<link rel="stylesheet" href="{% static 'mouseio/style.css' %}">
+
+		{% load bootstrap5 %}
+		{% load bootstrap_icons %}
+		{% bootstrap_css %}
+		{% bootstrap_javascript %}
+  	</head>
+	<body class="d-flex h-100 text-center text-white">
+		<div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+			<header class="mb-auto">
+                <div>
+					<!-- Navbar -->
+                    <nav class="navbar nav-masthead navbar-expand-md navbar-dark fixed-top bg-dark">
+                        <div class="container-fluid">
+							<a class="navbar-brand" href="/mouseio/lang=de">
+								<img src="{% static 'mouseio/images/logo.png' %}" alt="" height="36"/>
+							</a>
+							<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Navigation umschalten">
+								<span class="navbar-toggler-icon"></span>
+							</button>
+							<div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+								<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+									<li class="nav-item">
+										<a class="nav-link" aria-current="page" href="/mouseio/lang=de">Hellenic Airforce Museum</a>
+									</li>
+									<li class="nav-item dropdown">
+										<a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+											Ausstellungen
+										</a>
+										<ul class="dropdown-menu dropdown-menu-dark bg-dark" aria-labelledby="navbarDropdown">
+                                            <li class="nav-item"><a class="nav-link dropdown-item" href="/mouseio/SOUTH/lang=de">Außenausstellungen im Süden des Schutzbereichs LEROS</a></li>
+                                            <li class="nav-item"><a class="nav-link dropdown-item" href="/mouseio/LEROS/lang=de">Innenausstellungen im Schutzbereich LEROS</a></li>
+                                            <li class="nav-item"><a class="nav-link dropdown-item" href="/mouseio/NORTH/lang=de">Außenausstellungen im Norden des Schutzbereichs LEROS</a></li>
+                                        </ul>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link" href="/mouseio/about/lang=de">Über uns</a>
+									</li>
+									<li class="nav-item dropdown">
+										<a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+											<img src="https://flagcdn.com/de.svg" width="30" alt="Deutschland" />
+											Deutsch
+										</a>
+										<ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDropdown">
+											<li><hr class="dropdown-divider" /></li>
+											<li><a class="dropdown-item" href="/mouseio/desc/plane={{target_name}}/lang=el"><img src="https://flagcdn.com/gr.svg" width="30" alt="Griechenland"/> Ελληνικά</a></li>
+                                            <li><a class="dropdown-item" href="/mouseio/desc/plane={{target_name}}/lang=en"><img src="https://flagcdn.com/gb.svg" width="30" alt="Großbritannien"/> English</a></li>
+										</ul>
+									</li>
+								</ul>
+							</div>
+						</div>
+                    </nav>
+                </div>
+            </header>
+			<main class="px-3">
+				<h1 class="featurette-heading">{{ location.first.name_trans }}</h1>
+				<!-- Featurette carousel -->
+				<hr class="featurette-divider">
+				<div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel" data-bs-interval="false">
+					<div class="carousel-indicators">
+						{% for exhibit, short in exhibits %}
+						{% if target == exhibit.pk %}
+						<button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="{{forloop.counter0}}" class="active" aria-current="true" aria-label="Folie {{forloop.counter}}"></button>
+						{% else %}
+					  	<button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="{{forloop.counter0}}" aria-label="Folie {{forloop.counter}}"></button>
+						{% endif %}
+						{% endfor %}
+					</div>
+					<div class="carousel-inner">
+						{% for exhibit, short in exhibits %}
+						{% if target == exhibit.pk %}
+					  	<div class="carousel-item active">
+							<!-- FEATURETTE -->
+							<div class="row featurette m-5 d-flex aligns-items-center justify-content-center">
+								<div class="col-md-4">
+									<h2 class="featurette-heading">{{exhibit.name}}</h2>
+									<p class="lead">{{short}}<a data-bs-toggle="modal" href="#exampleModal{{forloop.counter0}}" role="button">mehr</a></p>
+								</div>
+								<div class="col-md-6">
+									<img src="{% static 'mouseio/images/'|add:location.first.name|add:'/'|add:exhibit.img %}"
+										style="border-radius: 15px 50px;"
+										class="img-fluid"
+										alt="Reaktionsfähiges Bild"
+										preserveAspectRatio="xMidYMid slice" 
+										focusable="false"
+										alt="...">
+								</div>
+							</div>
+					  	</div>
+						{% else %}
+						<div class="carousel-item">
+							<!-- FEATURETTE -->
+							<div class="row featurette m-5 d-flex aligns-items-center justify-content-center">
+								<div class="col-md-4">
+									<h2 class="featurette-heading">{{exhibit.name}}</h2>
+									<p class="lead">{{short}}<a data-bs-toggle="modal" href="#exampleModal{{forloop.counter0}}" role="button">mehr</a></p>
+								</div>
+								<div class="col-md-6">
+									<img src="{% static 'mouseio/images/'|add:location.first.name|add:'/'|add:exhibit.img %}"
+										style="border-radius: 15px 50px;"
+										class="img-fluid"
+										alt="Reaktionsfähiges Bild"
+										preserveAspectRatio="xMidYMid slice"
+										focusable="false"
+										alt="...">
+								</div>
+							</div>
+						</div>
+						{% endif %}
+						{% endfor %}
+					</div>
+					<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+						<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+						<span class="visually-hidden">Zurück</span>
+					</button>
+					<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+						<span class="carousel-control-next-icon" aria-hidden="true"></span>
+						<span class="visually-hidden">Weiter</span>
+					</button>
+				</div>
+				{% for exhibit, short in exhibits %}
+				<!-- Modell -->
+				<div class="container">
+					<div class="modal fade" id="exampleModal{{forloop.counter0}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+						<div class="modal-dialog">
+							<div class="modal-content bg-dark">
+								<div class="modal-header">
+									<h5 class="modal-title" id="exampleModalLabel">{{ exhibit.name }}</h5>
+									<button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Schließen"></button>
+								</div>
+								<div class="modal-body">
+									{% for desc in descriptions %}
+										{% if desc.exhibit == exhibit %}
+										<img src="{% static 'mouseio/images/'|add:location.first.name|add:'/'|add:exhibit.img %}" class="d-block w-100 img-fluid" alt="..." style="border-radius: 15px 50px;">
+										<hr class="hr"/>
+										<p class="lead text-center">{{ desc.text }}</p>
+										{% endif %}
+									{% endfor %}
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				{% endfor %}
+			</main>
+			<footer class="mt-auto text-white-50">
+				<p>Website für <a href="https://www.haf.gr/history/museum/" class="text-white">Hellenic Airforce Museum</a></p>
+			</footer>
+		</div>	  
+  	</body>
+</html>

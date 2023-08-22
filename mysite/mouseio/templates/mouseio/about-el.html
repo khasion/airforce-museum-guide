@@ -1,0 +1,132 @@
+{% load static %}
+<!doctype html>
+<html lang="el" class="h-100">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="Μουσείο Πολεμικής Αεροπορίας: Σχετικά και Επικοινωνία">
+		<meta name="author" content="Ioannis Kasionis, and Bootstrap contributors">
+		<title>Μουσείο Πολεμικής Αεροπορίας: Σχετικά και Επικοινωνία</title>
+
+		<link rel="stylesheet" href="{% static 'mouseio/style.css' %}">
+
+		{% load bootstrap5 %}
+		{% load bootstrap_icons %}
+		{% bootstrap_css %}
+		{% bootstrap_javascript %}
+	</head>
+	<body class="d-flex h-100 text-center text-white">
+		<div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+			<header class="mb-auto">
+				<div>
+					<!-- Navbar -->
+					<nav class="navbar nav-masthead navbar-expand-md navbar-dark fixed-top bg-dark">
+                        <div class="container-fluid">
+							<a class="navbar-brand" href="/mouseio/lang=el">
+								<img src="{% static 'mouseio/images/logo.png' %}" class="" alt="" height="36">
+							</a>
+							<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+								<span class="navbar-toggler-icon"></span>
+							</button>
+							<div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+								<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+									<li class="nav-item">
+										<a class="nav-link" aria-current="page" href="/mouseio/lang=el">Μουσείο Πολεμικής Αεροπορίας</a>
+									</li>
+									<li class="nav-item dropdown">
+										<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+											Εκθέματα
+										</a>
+										<ul class="dropdown-menu dropdown-menu-dark bg-dark" aria-labelledby="navbarDropdown">
+                                            <li class="nav-item"><a class="nav-link dropdown-item" href="/mouseio/SOUTH/lang=el">Εκθέματα Εξωτερικά Νοτίως του Υπόστεγου ΛΕΡΟΣ</a></li>
+                                            <li class="nav-item"><a class="nav-link dropdown-item" href="/mouseio/LEROS/lang=el">Εκθέματα Εντός του Υποστέγου ΛΕΡΟΣ</a></li>
+                                            <li class="nav-item"><a class="nav-link dropdown-item" href="/mouseio/NORTH/lang=el">Εκθέματα Εξωτερικά Βορείως του Υποστέγου ΛΕΡΟΣ</a></li>
+                                        </ul>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link active" href="/mouseio/about/lang=el">Σχετικά</a>
+									</li>
+									<li class="nav-item dropdown">
+										<a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+											<img src="https://flagcdn.com/gr.svg" width="30" alt="Greece"/> Ελληνικά
+										</a>
+										<ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDropdown">
+											<li><hr class="dropdown-divider" /></li>
+											<li><a class="dropdown-item" href="/mouseio/about/lang=en"><img src="https://flagcdn.com/gb.svg" width="30" alt="Greece"/> English</a></li>
+											<li><a class="dropdown-item" href="/mouseio/about/lang=de"><img src="https://flagcdn.com/de.svg" width="30" alt="German"/> Deutch</a></li>
+										</ul>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</nav>
+				</div>
+			</header>
+			<main class="px-3">
+				<!-- About Section -->
+				<section class="py-5">
+					<div class="container">
+						<div class="row featurette">
+							<div class="col-md-7">
+								<h2 class="featurette-heading">Σχετικά με το Μουσείο Πολεμικής Αεροπορίας</h2>
+          						<p class="lead">Το Μουσείο Πολεμικής Αεροπορίας, που βρίσκεται στην Αεροπορική Βάση Δεκελειάς στο Τατόι, παρουσιάζει μια εντυπωσιακή συλλογή αεροπορικών εκθεμάτων.</p>
+          						<p class="lead">Η αποστολή μας είναι η συγκέντρωση, η διατήρηση και η έκθεση των θησαυρών της ελληνικής αεροπορίας, η μελέτη και η τεκμηρίωση της ιστορίας της, καθώς και η προώθηση της αξιοπρέπειας και του αεροπορικού πνεύματος μέσα από τους αιώνες.</p>
+          						<p class="lead">Το μουσείο προσφέρει ένα συναρπαστικό ταξίδι στον χρόνο, όπου οι επισκέπτες μπορούν να εξερευνήσουν τη γενναιοδωρία και τη δόξα των πιλότων μας που υπερασπίστηκαν την ελευθερία και την ασφάλεια της χώρας μας.</p>
+							</div>
+							<div class="col-md-5">
+								<!-- Add an image of the museum here -->
+								<img src="{% static 'mouseio/images/ABOUT/img2.jpg' %}"
+									alt="Hellenic Airforce Museum"
+									class="img-fluid w-100 h-100"
+									style="border-radius: 15px 50px;">
+							</div>
+						</div>
+						<!-- CONTACT FEATURETTE -->
+						<hr class="featurette-divider">
+						<div class="row featurette">
+							<div class="col-md-7">
+								<h2 class="featurette-heading">Επικοινωνία</h2>
+								<ul class="list-unstyled">
+									<li><p class="lead text-start"><b>Διεύθυνση:</b> Μουσείο ΠΑ, Αεροπορική Βάση Δεκελείας, 13671, Τατόι</p></li>
+									<li><p class="lead text-start"><b>Γραφείο Εκθέσεων:</b> +30 210-8195250, +30210-8195255, +30 210-8195275</p></li>
+									<li><p class="lead text-start"><b>Email:</b> museum@haf.gr</p></li>
+									<li><p class="lead text-start"><b>Συντεταγμένες GPS:</b> 38.1002204 – 23.7803797,375</p></li>
+								</ul>
+							</div>
+							<div class="col-md-5">
+								<img src="{% static 'mouseio/images/ABOUT/img3.jpg' %}"
+									style="border-radius: 15px 50px;"
+									class="img-fluid"
+									alt="Εικόνα"
+									preserveAspectRatio="xMidYMid slice" 
+									focusable="false"
+									alt="...">
+							</div>
+						</div>
+						<hr class="featurette-divider">
+						<!-- VISITING FEATURETTE -->
+						<div class="row featurette">
+							<div class="col-md-7">
+								<h2 class="featurette-heading">Ώρες Επισκέψεων</h2>
+								<p class="lead">Κάθε Σάββατο και Κυριακή, εκτός των Εθνικών Εορτών, 10:00 με 16:00</p>
+								<p class="lead">Τις εργάσιμες ημέρες μόνο για σχολεία (όλων των εκπαιδευτικών βαθμίδων) - Ομάδες - Συλλόγους, μετά από επικοινωνία μέσω τηλεφώνου ή ηλεκτρονικού ταχυδρομείου και υπόκειται σε έγκριση.</p>
+							</div>
+							<div class="col-md-5">
+								<img src="{% static 'mouseio/images/ABOUT/img1.jpg' %}"
+									style="border-radius: 15px 50px;"
+									class="img-fluid"
+									alt="Ευαίσθητη εικόνα"
+									preserveAspectRatio="xMidYMid slice" 
+									focusable="false"
+									alt="...">
+							</div>
+						</div>
+					</div>
+				</section>
+			</main>
+			<footer class="mt-auto text-white-50">
+				<p>Website for <a href="https://www.haf.gr/history/museum/" class="text-white">Hellenic Airforce Museum</a></p>
+			</footer>
+		</div>    
+	</body>
+</html>

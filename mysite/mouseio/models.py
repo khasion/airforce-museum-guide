@@ -5,21 +5,53 @@ from django.utils import timezone
 
 
 # Create your models here.
-class Question(models.Model):
-    question_text = models.CharField(max_length=200)
-    pub_date = models.DateTimeField("date published")
-    
-    def __str__(self):
-        return self.question_text
-    
-    def was_published_recently(self):
-        return self.pub_date >= timezone.now() - datetime.timedelta(days=1)
 
-
-class Choice(models.Model):
-    question = models.ForeignKey(Question, on_delete=models.CASCADE)
-    choice_text = models.CharField(max_length=200)
-    votes = models.IntegerField(default=0)
+# Exhibit Model for each Plane/Helicopter
+class Exhibit(models.Model):
+    exhibit_ID = models.AutoField(primary_key=True, editable=False)
+    name = models.CharField(max_length=200)
+    type = models.CharField(max_length=200)
+    location = models.CharField(max_length=200)
+    img = models.CharField(max_length=200, default='')
 
     def __str__(self):
-        return self.choice_text
+        return self.location + ' | ' + self.name
+    
+    def get_type(self):
+        return self.type
+    
+    def get_id(self):
+        return self.id
+    
+    def get_img(self):
+        return self.img
+
+# Location Description Model
+class LocationDescription(models.Model):
+    name = models.CharField(max_length=200)
+    name_trans = models.CharField(max_length=200)
+    text = models.CharField(max_length=100_000)
+    lang = models.CharField(max_length=200)
+    img = models.CharField(max_length=200)
+    feat_img = models.CharField(max_length=200)
+
+    def __str__(self):
+        return self.name + ' | ' + self.text + ' | ' + self.lang
+    
+    def get_lang(self):
+        return self.lang
+    
+# Exhibit Description Model
+class ExhibitDescription(models.Model):
+    exhibit = models.ForeignKey(Exhibit, on_delete=models.CASCADE)
+    text = models.CharField(max_length=100_000)
+    lang = models.CharField(max_length=200)
+
+    def __str__(self):
+        return self.exhibit.name + '| ' +  self.text + ' | ' + self.lang
+
+    def get_lang(self):
+        return self.lang
+
+    def get_exhibit(self):
+        return self.exhibit

@@ -1,6 +1,8 @@
 from django.contrib import admin
 
 # Register your models here.
-from .models import Question
+from .models import Exhibit, LocationDescription, ExhibitDescription
 
-admin.site.register(Question)
+admin.site.register(Exhibit)
+admin.site.register(LocationDescription)
+admin.site.register(ExhibitDescription)

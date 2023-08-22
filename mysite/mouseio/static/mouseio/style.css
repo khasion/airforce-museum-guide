@@ -1,0 +1,144 @@
+/*
+ * Globals
+ */
+
+/* Custom default button */
+.btn-secondary,
+.btn-secondary:hover,
+.btn-secondary:focus {
+	color: #333;
+  	text-shadow: none; /* Prevent inheritance from `body` */
+}
+
+/*
+ * Base structure
+ */
+body {
+	padding-top: 3rem;
+	padding-bottom: 3rem;
+	color: #5a5a5a;
+	background-image: linear-gradient(to bottom left, darkslategray, black );
+	background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+/*
+ * Header
+ */
+.nav-masthead .nav-link {
+	padding: .25rem 0;
+	background-color: transparent;
+	border-bottom: .25rem solid transparent;
+}
+
+.nav-masthead .nav-link:hover,
+.nav-masthead .nav-link:focus {
+	color: #fff;
+	border-bottom-color: rgba(255, 255, 255, .25);
+}
+
+.nav-masthead .nav-link + .nav-link {
+	margin-left: 1rem;
+}
+
+.nav-masthead .active {
+	color: #fff;
+	border-bottom-color: #fff;
+}
+
+/* MARKETING CONTENT
+-------------------------------------------------- */
+
+/* Center align the text within the three columns */
+.marketing .col-lg-4 {
+	margin-bottom: 1.5rem;
+	text-align: center;
+}
+.marketing h2 {
+	font-weight: 400;
+}
+/* rtl:begin:ignore */
+.marketing .col-lg-4 p {
+	margin-right: .75rem;
+	margin-left: .75rem;
+}
+/* rtl:end:ignore */
+
+/* Featurettes
+------------------------- */
+
+.featurette-divider {
+	margin: 5rem 0; /* Space out the Bootstrap <hr> more */
+}
+  
+  /* Thin out the marketing headings */
+.featurette-heading {
+	font-weight: 300;
+	line-height: 1;
+	/* rtl:remove */
+	letter-spacing: -.05rem;
+}
+
+/* Home Page background Image
+------------------------- */
+
+.jumbotron {
+	background-image: url('path-to-your-image.jpg');
+	background-size: cover;
+	background-position: center;
+	color: white;
+}
+
+.bg-image{
+	height: 500px;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+}
+
+.bg-image:after {
+	background-color: rgba(0, 0, 0, 0.7);
+}
+
+/* Placeholder Image */
+.bd-placeholder-img {
+	font-size: 1.125rem;
+	text-anchor: middle;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	user-select: none;
+}
+
+@media (min-width: 768px) {
+	.bd-placeholder-img-lg {
+		font-size: 3.5rem;
+	}
+	.cover-container {
+		max-width: 100rem;
+	}
+}
+
+/* Modal part */
+.modal-dialog{
+    overflow-y: initial !important
+}
+
+.modal-body {
+	height: 80vh;
+    overflow-y: auto;
+}
+
+.item {
+	width: 100%;
+	overflow: hidden;
+	border-radius: 10px;
+	transform: rotate(0);
+}
+
+.item > img {
+	transition: transform .2s; /* Animation */
+}
+
+.item > img:hover {
+	transform: scale(1.1);
+}

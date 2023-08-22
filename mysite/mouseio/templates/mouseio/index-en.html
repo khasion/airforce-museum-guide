@@ -1,0 +1,120 @@
+{% load static %}
+<!doctype html>
+<html lang="en" class="h-100">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Home page of the Hellenic Airforce Museum">
+        <meta name="author" content="Ioannis Kasionis, and Bootstrap contributors">
+        <title>Museum Home</title>
+
+        <link rel="stylesheet" href="{% static 'mouseio/style.css' %}">
+
+        {% load bootstrap5 %}
+        {% load bootstrap_icons %}
+        {% bootstrap_css %}
+        {% bootstrap_javascript %}
+    </head>
+    <body class="d-flex text-center text-white h-100">
+        <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+            <header class="mb-auto">
+                <div>
+                    <!-- Navbar -->
+                    <nav class="navbar nav-masthead navbar-expand-md navbar-dark fixed-top bg-dark">
+                        <div class="container-fluid">
+                            <a class="navbar-brand" href="/mouseio/lang=en">
+                                <img src="{% static 'mouseio/images/logo.png' %}" alt="" height="36">
+                            </a>
+                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                            <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                                    <li class="nav-item">
+                                        <a class="nav-link active" aria-current="page" href="/mouseio/lang=en">Hellenic Airforce Museum</a>
+                                    </li>
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                            Exhibits
+                                        </a>
+                                        <ul class="dropdown-menu dropdown-menu-dark bg-dark" aria-labelledby="navbarDropdown">
+                                            <li class="nav-item"><a class="nav-link dropdown-item" href="/mouseio/SOUTH/lang=en">Exhibits Outside South of the Shelter LEROS</a></li>
+                                            <li class="nav-item"><a class="nav-link dropdown-item" href="/mouseio/LEROS/lang=en">Exhibits Inside the Shelter LEROS</a></li>
+                                            <li class="nav-item"><a class="nav-link dropdown-item" href="/mouseio/NORTH/lang=en">Exhibits Outside North of the Shelter LEROS</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="/mouseio/about/lang=en">About</a>
+                                    </li>
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+											<img src="https://flagcdn.com/gb.svg" width="30" alt="United Kingdom" />
+											English
+										</a>
+										<ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDropdown">
+											<li><hr class="dropdown-divider" /></li>
+											<li><a class="dropdown-item" href="/mouseio/lang=el"><img src="https://flagcdn.com/gr.svg" width="30" alt="Greek"/> Ελληνικά</a></li>
+											<li><a class="dropdown-item" href="/mouseio/lang=de"><img src="https://flagcdn.com/de.svg" width="30" alt="German"/> Deutch</a></li>
+										</ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+            </header>
+            <main>
+                <!-- Jumbotron -->
+                <div class="jumbotron jumbotron-fluid text-center mt-4 p-5" style="background-image: {% static 'mouseio/images/ABOUT/img2.jpg' %}">
+                    <div class="container">
+                        <h1 class="display-4">Welcome to the Museum of the Hellenic Air Force</h1>
+                        <p class="lead">Explore the rich history and legacy of aviation excellence.</p>
+                        <a href="/mouseio/about/lang=en" class="btn btn-primary btn-lg">About</a>
+                    </div>
+                </div>
+                <hr class="featurette-divider">
+                <div class="container marketing mt-5">
+                    <!-- Three columns of text below the carousel -->
+                    <div class="row">
+                        {% for location in location_list %}
+                        <div class="col-lg-4">
+                            <img src="{% static 'mouseio/images/'|add:location.name|add:'/main.jpg' %}"
+                                class="bd-placeholder-img rounded-circle"
+                                width="140" height="140"
+                                alt="Responsive image"
+                                preserveAspectRatio="xMidYMid slice" 
+                                focusable="false"
+                                alt="...">
+                            <h2 class="featurette-heading">{{location.name_trans}}</h2>
+                            <p><a class="btn btn-info" href="/mouseio/{{location.name}}/lang=en">More &raquo;</a></p>
+                        </div><!-- /.col-lg-4 -->
+                        {% endfor %}
+                    </div><!-- /.row -->
+                </div>
+                <!-- START THE FEATURETTES -->
+                {% for location in location_list %}
+                <hr class="featurette-divider">
+
+                <div class="row featurette">
+                    <div class="col-md-7">
+                        <h2 class="featurette-heading">{{location.name_trans}}</h2>
+                        <p class="lead">{{location.text}}</p>
+                    </div>
+                    <div class="col-md-5">
+                        <img src="{% static 'mouseio/images/'|add:location.name|add:'/feat.jpg' %}"
+                            style="border-radius: 15px 50px;"
+                            class="img-fluid"
+                            alt="Responsive image"
+                            preserveAspectRatio="xMidYMid slice" 
+                            focusable="false"
+                            alt="...">
+                    </div>
+                </div>
+                {% endfor %}
+            </main>
+            <footer class="mt-5 text-white-50">
+				<p>Website for <a href="https://www.haf.gr/history/museum/" class="text-white">Hellenic Airforce Museum</a></p>
+            </footer>
+        </div>    
+    </body>
+</html>
