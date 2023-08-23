@@ -5,7 +5,7 @@ import csv
 
 from .models import Exhibit, LocationDescription, ExhibitDescription
 
-def index(request, lang):
+def index(request, lang="en"):
     locations = LocationDescription.objects.filter(lang = lang)
     context = {"location_list": locations}
     if lang == 'en':

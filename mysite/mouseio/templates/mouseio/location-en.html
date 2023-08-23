@@ -9,6 +9,7 @@
 		<title>Museum Exhibits</title>
 
 		<link rel="stylesheet" href="{% static 'mouseio/style.css' %}">
+		<link rel="shortcut icon" type="image/png" href="{% static 'mouseio/favicon.png' %}" >
 
 		{% load bootstrap5 %}
 		{% load bootstrap_icons %}
@@ -83,10 +84,6 @@
 					  	<div class="carousel-item active">
 							<!-- FEATURETTE -->
 							<div class="row featurette m-5 d-flex aligns-items-center justify-content-center">
-								<div class="col-md-4">
-									<h2 class="featurette-heading">{{exhibit.name}}</h2>
-									<p class="lead">{{short}}<a data-bs-toggle="modal" href="#exampleModal{{forloop.counter0}}" role="button">more</a></p>
-								</div>
 								<div class="col-md-6">
 									<img src="{% static 'mouseio/images/'|add:location.first.name|add:'/'|add:exhibit.img %}"
 										style="border-radius: 15px 50px;"
@@ -96,16 +93,16 @@
 										focusable="false"
 										alt="...">
 								</div>
+								<div class="col-md-4">
+									<h2 class="featurette-heading m-3">{{exhibit.name}}</h2>
+									<p class="lead">{{short}} <a data-bs-toggle="modal" href="#exampleModal{{forloop.counter0}}" role="button">more</a></p>
+								</div>
 							</div>
 					  	</div>
 						{% else %}
 						<div class="carousel-item">
 							<!-- FEATURETTE -->
 							<div class="row featurette m-5 d-flex aligns-items-center justify-content-center">
-								<div class="col-md-4">
-									<h2 class="featurette-heading">{{exhibit.name}}</h2>
-									<p class="lead">{{short}}<a data-bs-toggle="modal" href="#exampleModal{{forloop.counter0}}" role="button">more</a></p>
-								</div>
 								<div class="col-md-6">
 									<img src="{% static 'mouseio/images/'|add:location.first.name|add:'/'|add:exhibit.img %}"
 										style="border-radius: 15px 50px;"
@@ -114,6 +111,11 @@
 										preserveAspectRatio="xMidYMid slice"
 										focusable="false"
 										alt="...">
+								</div>
+								<div class="col-md-4">
+									<h2 class="featurette-heading m-3">{{exhibit.name}}</h2>
+									<p class="lead">{{short}} <a data-bs-toggle="modal" href="#exampleModal{{forloop.counter0}}" role="button">more</a></p>
+									
 								</div>
 							</div>
 						</div>
