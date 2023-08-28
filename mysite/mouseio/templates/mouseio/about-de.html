@@ -23,39 +23,42 @@
 				<div>
 					<nav class="navbar nav-masthead navbar-expand-md navbar-dark fixed-top bg-dark">
                         <div class="container-fluid">
-							<a class="navbar-brand" href="/mouseio/lang=de">
+							<a class="navbar-brand" href="/lang=de">
 								<img src="{% static 'mouseio/images/logo.png' %}" class="" alt="" height="36">
 							</a>
-							<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Navigation umschalten">
+							<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#NavbarToggler" aria-controls="NavbarToggler" aria-expanded="false" aria-label="Navigation umschalten">
 								<span class="navbar-toggler-icon"></span>
 							</button>
-							<div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+							<div class="collapse navbar-collapse" id="NavbarToggler">
+								<!-- Navbar Items -->
 								<ul class="navbar-nav me-auto mb-2 mb-lg-0">
 									<li class="nav-item">
-										<a class="nav-link" aria-current="page" href="/mouseio/lang=de">Hellenic Airforce Museum</a>
+										<a class="nav-link" aria-current="page" href="/lang=de">Hellenic Airforce Museum</a>
 									</li>
 									<li class="nav-item dropdown">
 										<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
 											Ausstellungen
 										</a>
 										<ul class="dropdown-menu dropdown-menu-dark bg-dark" aria-labelledby="navbarDropdown">
-                                            <li class="nav-item"><a class="nav-link dropdown-item" href="/mouseio/SOUTH/lang=de">Außenausstellungen im Süden des Schutzbereichs LEROS</a></li>
-                                            <li class="nav-item"><a class="nav-link dropdown-item" href="/mouseio/LEROS/lang=de">Innenausstellungen im Schutzbereich LEROS</a></li>
-                                            <li class="nav-item"><a class="nav-link dropdown-item" href="/mouseio/NORTH/lang=de">Außenausstellungen im Norden des Schutzbereichs LEROS</a></li>
+											<!-- Exhibits Dropdown -->
+                                            <li class="nav-item"><a class="nav-link dropdown-item" href="/SOUTH/lang=de">Außenausstellungen im Süden des Schutzbereichs LEROS</a></li>
+                                            <li class="nav-item"><a class="nav-link dropdown-item" href="/LEROS/lang=de">Innenausstellungen im Schutzbereich LEROS</a></li>
+                                            <li class="nav-item"><a class="nav-link dropdown-item" href="/NORTH/lang=de">Außenausstellungen im Norden des Schutzbereichs LEROS</a></li>
                                         </ul>
 									</li>
 									<li class="nav-item">
-										<a class="nav-link active" href="/mouseio/about/lang=de">Über uns</a>
+										<a class="nav-link active" href="/about/lang=de">Über uns</a>
 									</li>
 									<li class="nav-item dropdown">
+										<!-- Language Dropdown -->
 										<a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
 											<img src="https://flagcdn.com/de.svg" width="30" alt="Deutschland" />
 											Deutsch
 										</a>
 										<ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDropdown">
 											<li><hr class="dropdown-divider" /></li>
-											<li><a class="dropdown-item" href="/mouseio/about/lang=el"><img src="https://flagcdn.com/gr.svg" width="30" alt="Griechenland"/> Ελληνικά</a></li>
-                                            <li><a class="dropdown-item" href="/mouseio/about/lang=en"><img src="https://flagcdn.com/gb.svg" width="30" alt="Großbritannien"/> English</a></li>
+											<li><a class="dropdown-item" href="/about/lang=el"><img src="https://flagcdn.com/gr.svg" width="30" alt="Griechenland"/> Ελληνικά</a></li>
+                                            <li><a class="dropdown-item" href="/about/lang=en"><img src="https://flagcdn.com/gb.svg" width="30" alt="Großbritannien"/> English</a></li>
 										</ul>
 									</li>
 								</ul>
@@ -79,7 +82,7 @@
 								<!-- Fügen Sie hier ein Bild des Museums ein -->
 								<img src="{% static 'mouseio/images/ABOUT/img2.jpg' %}"
 									alt="Hellenic Airforce Museum"
-									class="img-fluid w-100 h-100"
+									class="img-fluid"
 									style="border-radius: 15px 50px;">
 							</div>
 						</div>

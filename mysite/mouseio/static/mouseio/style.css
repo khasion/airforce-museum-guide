@@ -1,7 +1,3 @@
-/*
- * Globals
- */
-
 /* Custom default button */
 .btn-secondary,
 .btn-secondary:hover,
@@ -10,9 +6,8 @@
   	text-shadow: none; /* Prevent inheritance from `body` */
 }
 
-/*
- * Base structure
- */
+/* Base structure
+------------------------- */
 body {
 	padding-top: 3rem;
 	padding-bottom: 3rem;
@@ -22,9 +17,8 @@ body {
     background-attachment: fixed;
 }
 
-/*
- * Header
- */
+/* Navbar
+------------------------- */
 .nav-masthead .nav-link {
 	padding: .25rem 0;
 	background-color: transparent;
@@ -66,7 +60,6 @@ body {
 
 /* Featurettes
 ------------------------- */
-
 .featurette-divider {
 	margin: 5rem 0; /* Space out the Bootstrap <hr> more */
 }
@@ -81,7 +74,6 @@ body {
 
 /* Home Page background Image
 ------------------------- */
-
 .jumbotron {
 	background-image: url('path-to-your-image.jpg');
 	background-size: cover;
@@ -100,7 +92,8 @@ body {
 	background-color: rgba(0, 0, 0, 0.7);
 }
 
-/* Placeholder Image */
+/* Placeholder Image
+------------------------- */
 .bd-placeholder-img {
 	font-size: 1.125rem;
 	text-anchor: middle;
@@ -113,12 +106,34 @@ body {
 	.bd-placeholder-img-lg {
 		font-size: 3.5rem;
 	}
-	.cover-container {
-		max-width: 100rem;
-	}
 }
 
-/* Modal part */
+/* Carousel part
+------------------------- */
+#carouselExhibitCaptions .carousel-item img {
+	object-fit: cover;
+	object-position: center;
+	height: 40vh;
+	overflow: hidden;
+	position:relative;
+  	z-index:-1;
+  	display:block;
+}
+
+.pick-gradient {
+	display:inline-block;
+	background: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.65) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0.65)), color-stop(100%,rgba(0,0,0,0))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%); /* IE10+ */
+	background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', endColorstr='#00000000',GradientType=0 ); /* IE6-9 */
+}
+  
+
+/* Modal part
+------------------------- */
 .modal-dialog{
     overflow-y: initial !important
 }
@@ -126,19 +141,4 @@ body {
 .modal-body {
 	height: 80vh;
     overflow-y: auto;
-}
-
-.item {
-	width: 100%;
-	overflow: hidden;
-	border-radius: 10px;
-	transform: rotate(0);
-}
-
-.item > img {
-	transition: transform .2s; /* Animation */
-}
-
-.item > img:hover {
-	transform: scale(1.1);
 }

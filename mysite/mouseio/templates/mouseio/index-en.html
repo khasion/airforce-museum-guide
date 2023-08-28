@@ -24,39 +24,42 @@
                     <!-- Navbar -->
                     <nav class="navbar nav-masthead navbar-expand-md navbar-dark fixed-top bg-dark">
                         <div class="container-fluid">
-                            <a class="navbar-brand" href="/mouseio/lang=en">
+                            <a class="navbar-brand" href="/lang=en">
                                 <img src="{% static 'mouseio/images/logo.png' %}" alt="" height="36">
                             </a>
-                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#NavbarToggler" aria-controls="NavbarToggler" aria-expanded="false" aria-label="Toggle navigation">
                                 <span class="navbar-toggler-icon"></span>
                             </button>
-                            <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                            <div class="collapse navbar-collapse" id="NavbarToggler">
+                                <!-- Navbar Items -->
                                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                                     <li class="nav-item">
-                                        <a class="nav-link active" aria-current="page" href="/mouseio/lang=en">Hellenic Airforce Museum</a>
+                                        <a class="nav-link active" aria-current="page" href="/lang=en">Hellenic Airforce Museum</a>
                                     </li>
                                     <li class="nav-item dropdown">
+                                        <!-- Exhibits Dropdown -->
                                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                             Exhibits
                                         </a>
                                         <ul class="dropdown-menu dropdown-menu-dark bg-dark" aria-labelledby="navbarDropdown">
-                                            <li class="nav-item"><a class="nav-link dropdown-item" href="/mouseio/SOUTH/lang=en">Exhibits Outside South of the Shelter LEROS</a></li>
-                                            <li class="nav-item"><a class="nav-link dropdown-item" href="/mouseio/LEROS/lang=en">Exhibits Inside the Shelter LEROS</a></li>
-                                            <li class="nav-item"><a class="nav-link dropdown-item" href="/mouseio/NORTH/lang=en">Exhibits Outside North of the Shelter LEROS</a></li>
+                                            <li class="nav-item"><a class="nav-link dropdown-item" href="/SOUTH/lang=en">Exhibits Outside South of the Shelter LEROS</a></li>
+                                            <li class="nav-item"><a class="nav-link dropdown-item" href="/LEROS/lang=en">Exhibits Inside the Shelter LEROS</a></li>
+                                            <li class="nav-item"><a class="nav-link dropdown-item" href="/NORTH/lang=en">Exhibits Outside North of the Shelter LEROS</a></li>
                                         </ul>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="/mouseio/about/lang=en">About</a>
+                                        <a class="nav-link" href="/about/lang=en">About</a>
                                     </li>
                                     <li class="nav-item dropdown">
+                                        <!-- Language Dropdown -->
                                         <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
 											<img src="https://flagcdn.com/gb.svg" width="30" alt="United Kingdom" />
 											English
 										</a>
 										<ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDropdown">
 											<li><hr class="dropdown-divider" /></li>
-											<li><a class="dropdown-item" href="/mouseio/lang=el"><img src="https://flagcdn.com/gr.svg" width="30" alt="Greek"/> Ελληνικά</a></li>
-											<li><a class="dropdown-item" href="/mouseio/lang=de"><img src="https://flagcdn.com/de.svg" width="30" alt="German"/> Deutch</a></li>
+											<li><a class="dropdown-item" href="/lang=el"><img src="https://flagcdn.com/gr.svg" width="30" alt="Greek"/> Ελληνικά</a></li>
+											<li><a class="dropdown-item" href="/lang=de"><img src="https://flagcdn.com/de.svg" width="30" alt="German"/> Deutsch</a></li>
 										</ul>
                                     </li>
                                 </ul>
@@ -67,11 +70,11 @@
             </header>
             <main>
                 <!-- Jumbotron -->
-                <div class="jumbotron jumbotron-fluid text-center mt-4 p-5" style="background-image: {% static 'mouseio/images/ABOUT/img2.jpg' %}">
+                <div class="jumbotron jumbotron-fluid text-center mt-4 p-5">
                     <div class="container">
                         <h1 class="display-4">Welcome to the Museum of the Hellenic Air Force</h1>
                         <p class="lead">Explore the rich history and legacy of aviation excellence.</p>
-                        <a href="/mouseio/about/lang=en" class="btn btn-primary btn-lg">About</a>
+                        <a href="/about/lang=en" class="btn btn-secondary btn-lg">About</a>
                     </div>
                 </div>
                 <hr class="featurette-divider">
@@ -88,7 +91,7 @@
                                 focusable="false"
                                 alt="...">
                             <h2 class="featurette-heading">{{location.name_trans}}</h2>
-                            <p><a class="btn btn-info" href="/mouseio/{{location.name}}/lang=en">More &raquo;</a></p>
+                            <p><a class="btn btn-info" href="/{{location.name}}/lang=en">More &raquo;</a></p>
                         </div><!-- /.col-lg-4 -->
                         {% endfor %}
                     </div><!-- /.row -->
@@ -97,15 +100,15 @@
                 {% for location in location_list %}
                 <hr class="featurette-divider">
 
-                <div class="row featurette">
-                    <div class="col-md-7">
+                <div class="row featurette d-flex aligns-items-center justify-content-center">
+                    <div class="col-md-4">
                         <h2 class="featurette-heading">{{location.name_trans}}</h2>
                         <p class="lead">{{location.text}}</p>
                     </div>
-                    <div class="col-md-5">
+                    <div class="col-md-4">
                         <img src="{% static 'mouseio/images/'|add:location.name|add:'/feat.jpg' %}"
                             style="border-radius: 15px 50px;"
-                            class="img-fluid"
+                            class="featurette-img img-fluid"
                             alt="Responsive image"
                             preserveAspectRatio="xMidYMid slice" 
                             focusable="false"
