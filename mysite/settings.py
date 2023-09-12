@@ -27,7 +27,7 @@ DEBUG = True
 
 # For deployment set ALLOWED_HOSTS = ['.vercel.app']
 # For development set ALLOWED_HOSTS = ['*']
-ALLOWED_HOSTS = ['.vercel.app']
+ALLOWED_HOSTS = ['127.0.0.1', '.vercel.app']
 
 
 # Application definition
@@ -72,7 +72,9 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'mysite.wsgi.application'
+# For vercel deployment WSGI_APPLICATION = 'vercel_app.wsgi.app'
+# Else WSGI_APPLICATION = 'mysite.wsgi.application'
+WSGI_APPLICATION = 'mouseio.wsgi.application'
 
 
 # Database
