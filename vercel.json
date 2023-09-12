@@ -1,12 +1,12 @@
 {
     "builds": [{
-        "src": "mouseio/wsgi.py",
+        "src": "mysite/wsgi.py",
         "use": "@vercel/python"
     }],
     "routes": [
         {
             "src": "/(.*)",
-            "dest": "mouseio/wsgi.py"
+            "dest": "mysite/wsgi.py"
         }
     ]
 }
