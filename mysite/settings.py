@@ -74,7 +74,7 @@ TEMPLATES = [
 
 # For vercel deployment WSGI_APPLICATION = 'vercel_app.wsgi.app'
 # Else WSGI_APPLICATION = 'mysite.wsgi.application'
-WSGI_APPLICATION = 'mouseio.wsgi.application'
+WSGI_APPLICATION = 'mysite.wsgi.application'
 
 
 # Database
