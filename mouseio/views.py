@@ -37,7 +37,9 @@ def location(request, location_name, lang):
 
 
 def description(request, plane_name, lang):
+    print(plane_name)
     target_exhibit = Exhibit.objects.filter(name = plane_name)
+    print(target_exhibit)
     location = LocationDescription.objects.filter(name = target_exhibit[0].location, lang = lang)
     exhibits = Exhibit.objects.filter(location = target_exhibit[0].location)
     descriptions = ExhibitDescription.objects.filter(exhibit__in = exhibits, lang = lang)
