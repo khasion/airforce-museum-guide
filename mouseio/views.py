@@ -1,6 +1,7 @@
 from django.shortcuts import get_object_or_404, render
 from django.http import HttpResponse
 import csv
+import requests
 
 
 from .models import Exhibit, LocationDescription, ExhibitDescription
@@ -37,6 +38,7 @@ def location(request, location_name, lang):
 
 
 def description(request, plane_name, lang):
+    plane_name = requests.utils.unquote(plane_name)
     print(plane_name)
     target_exhibit = Exhibit.objects.filter(name = plane_name)
     print(target_exhibit)
