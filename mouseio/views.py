@@ -28,7 +28,7 @@ def location(request, location_name, lang):
     target = exhibits[0].pk
     exhibits_zipped = list(zip(exhibits, shortened))
 
-    context = {'exhibits': exhibits_zipped, 'location': location, 'descriptions': descriptions, 'target': target, 'target_name': exhibits[0].name, 'is_desc': 0}
+    context = {'exhibits': exhibits_zipped, 'location': location, 'descriptions': descriptions, 'target': target, 'target_id': exhibits[0].pk, 'is_desc': 0}
     if lang == 'en':
         return render(request, "mouseio/location-en.html", context)
     if lang == 'de':
@@ -37,13 +37,10 @@ def location(request, location_name, lang):
         return render(request, "mouseio/location-el.html", context)
 
 
-def description(request, plane_name, lang):
-    plane_name = requests.utils.unquote(plane_name)
-    print(plane_name)
-    target_exhibit = Exhibit.objects.filter(name = plane_name)
-    print(target_exhibit)
-    location = LocationDescription.objects.filter(name = target_exhibit[0].location, lang = lang)
-    exhibits = Exhibit.objects.filter(location = target_exhibit[0].location)
+def description(request, plane_id, lang):
+    target_exhibit = Exhibit.objects.get(exhibit_ID = plane_id)
+    location = LocationDescription.objects.filter(name = target_exhibit.location, lang = lang)
+    exhibits = Exhibit.objects.filter(location = target_exhibit.location)
     descriptions = ExhibitDescription.objects.filter(exhibit__in = exhibits, lang = lang)
 
     shortened = []
@@ -52,7 +49,7 @@ def description(request, plane_name, lang):
 
     exhibits_zipped = list(zip(exhibits, shortened))
 
-    context = {'exhibits': exhibits_zipped, 'location': location, 'descriptions': descriptions, 'target': target_exhibit[0].pk, 'target_name': plane_name, 'is_desc': 1}
+    context = {'exhibits': exhibits_zipped, 'location': location, 'descriptions': descriptions, 'target': target_exhibit.pk, 'target_id': plane_id, 'is_desc': 1}
     if lang == 'en':
         return render(request, "mouseio/location-en.html", context)
     if lang == 'de':

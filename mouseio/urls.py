@@ -15,5 +15,5 @@ urlpatterns = [
     # ex: /SOUTH/lang=el
     path("<str:location_name>/lang=<str:lang>", views.location, name="location"),
     # ex: desc/plane=MDD RF-4E Phantom II (69-7487)/lang=en
-    path("desc/plane=<str:plane_name>/lang=<str:lang>", views.description, name="description"),
+    path("desc/plane=<int:plane_id>/lang=<str:lang>", views.description, name="description"),
 ]
