@@ -10,8 +10,8 @@ urlpatterns = [
     path("", views.index, name="index"),
     # ex: /lang=en
     path("lang=<str:lang>", views.index, name="index"),
-    # ex: /about/lang=en
-    path("about/lang=<str:lang>", views.about, name="about"),
+    # ex: /contact/lang=en
+    path("contact/lang=<str:lang>", views.contact, name="contact"),
     # ex: /SOUTH/lang=el
     path("<str:location_name>/lang=<str:lang>", views.location, name="location"),
     # ex: desc/plane=MDD RF-4E Phantom II (69-7487)/lang=en

@@ -1,0 +1,143 @@
+{% load static %}
+<!doctype html>
+<html lang="fr" class="h-100">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="Musée de l'Armée de l'Air hellénique : À propos et contact">
+		<meta name="author" content="Ioannis Kasionis et les contributeurs de Bootstrap">
+		<title>Musée de l'Armée de l'Air hellénique : À propos et contact</title>
+
+		<link rel="stylesheet" href="{% static 'mouseio/style.css' %}">
+		<link rel="shortcut icon" type="image/png" href="{% static 'mouseio/favicon.png' %}" >
+
+
+		{% load bootstrap5 %}
+		{% load bootstrap_icons %}
+		{% bootstrap_css %}
+		{% bootstrap_javascript %}
+	</head>
+	<body class="d-flex h-100 text-center text-white">
+		<div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+			<header class="mb-auto">
+				<div>
+					<nav class="navbar nav-masthead navbar-expand-md navbar-dark fixed-top bg-dark">
+                        <div class="container-fluid">
+							<a class="navbar-brand" href="/lang=fr">
+								<img src="{% static 'mouseio/images/logo.png' %}" class="" alt="" height="36">
+							</a>
+							<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#NavbarToggler" aria-controls="NavbarToggler" aria-expanded="false" aria-label="Basculer la navigation">
+								<span class="navbar-toggler-icon"></span>
+							</button>
+							<div class="collapse navbar-collapse" id="NavbarToggler">
+								<!-- Éléments de navigation -->
+								<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+									<li class="nav-item">
+										<a class="nav-link" aria-current="page" href="/lang=fr">Musée de l'Armée de l'Air hellénique</a>
+									</li>
+									<li class="nav-item dropdown">
+										<!-- Menu déroulant des expositions -->
+										<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+											Expositions
+										</a>
+										<ul class="dropdown-menu dropdown-menu-dark bg-dark" aria-labelledby="navbarDropdown">
+                                            <li class="nav-item"><a class="nav-link dropdown-item" href="/SOUTH/lang=fr">Expositions à l'extérieur au sud de l'abri LEROS</a></li>
+                                            <li class="nav-item"><a class="nav-link dropdown-item" href="/LEROS/lang=fr">Expositions à l'intérieur de l'abri LEROS</a></li>
+                                            <li class="nav-item"><a class="nav-link dropdown-item" href="/NORTH/lang=fr">Expositions à l'extérieur au nord de l'abri LEROS</a></li>
+                                        </ul>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link active" href="/contact/lang=fr">Contact</a>
+									</li>
+									<li class="nav-item dropdown">
+										<!-- Menu déroulant de la langue -->
+										<a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+											<img src="https://flagcdn.com/fr.svg" width="30" alt="Royaume-Uni" />
+											Français
+										</a>
+										<ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDropdown">
+											<li><hr class="dropdown-divider" /></li>
+											<li><a class="dropdown-item" href="/contact/lang=el"><img src="https://flagcdn.com/gr.svg" width="30" alt="Grec"/> Ελληνικά</a></li>
+											<li><a class="dropdown-item" href="/contact/lang=de"><img src="https://flagcdn.com/de.svg" width="30" alt="Allemand"/> Deutsch</a></li>
+											<li><a class="dropdown-item" href="/contact/lang=en"><img src="https://flagcdn.com/gb.svg" width="30" alt="Royaume-Uni"/> English</a></li>
+											<li><a class="dropdown-item" href="/contact/lang=it"><img src="https://flagcdn.com/it.svg" width="30" alt="Italien"/> Italiano</a></li>
+											<li><a class="dropdown-item" href="/contact/lang=esp"><img src="https://flagcdn.com/es.svg" width="30" alt="Espagnol"/> Español</a></li>
+											<li><a class="dropdown-item" href="/contact/lang=pol"><img src="https://flagcdn.com/pl.svg" width="30" alt="Polonais"/> Polski</a></li>
+										</ul>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</nav>
+				</div>
+			</header>
+			<main class="px-3">
+				<section class="py-5">
+					<div class="container">
+						<!-- À PROPOS DE LA CARACTÉRISTIQUE -->
+						<div class="row featurette">
+							<div class="col-md-7">
+								<h2 class="featurette-heading">À propos du Musée de l'Armée de l'Air hellénique</h2>
+								<p class="lead">Le Musée de l'Armée de l'Air hellénique, situé à la base aérienne de Dékélia à Tatoï, présente une impressionnante collection d'artefacts de l'aviation.</p>
+								<p class="lead">Notre mission est de rassembler, préserver et exposer les trésors de l'aviation grecque, d'étudier et de documenter son histoire, et de promouvoir la bravoure et l'esprit de l'aviation à travers les âges.</p>
+								<p class="lead">Le musée offre un voyage fascinant à travers le temps, où les visiteurs peuvent explorer la bravoure et la gloire de nos pilotes qui ont défendu la liberté et la sécurité de notre pays.</p>
+							</div>
+							<div class="col-md-5">
+								<!-- Ajoutez une image du musée ici -->
+								<img src="{% static 'mouseio/images/ABOUT/img2.jpg' %}"
+									alt="Musée de l'Armée de l'Air hellénique"
+									class="img-fluid"
+									style="border-radius: 15px 50px;">
+							</div>
+						</div>
+						<!-- CARACTÉRISTIQUE DE CONTACT -->
+						<hr class="featurette-divider">
+		
+						<div class="row featurette">
+							<div class="col-md-7">
+								<h2 class="featurette-heading">Contact</h2>
+								<ul class="list-unstyled">
+									<li><p class="lead text-start"><b>Adresse :</b> Musée de l'Armée de l'Air, base aérienne de Dékélia, 13671, Tatoï</p></li>
+									<li><p class="lead text-start"><b>Bureau des expositions :</b> +30 210-8195250, +30 210-8195255, +30 210-8195275</p></li>
+									<li><p class="lead text-start"><b>E-mail :</b> museum@haf.gr</p></li>
+									<li><p class="lead text-start"><b>Coordonnées GPS :</b> 38.1002204 – 23.7803797,375</p></li>
+								</ul>
+							</div>
+							<div class="col-md-5">
+								<img src="{% static 'mouseio/images/ABOUT/img3.jpg' %}"
+									style="border-radius: 15px 50px;"
+									class="img-fluid"
+									alt="Image responsive"
+									preserveAspectRatio="xMidYMid slice" 
+									focusable="false"
+									alt="...">
+							</div>
+						</div>
+						<!-- CARACTÉRISTIQUE DE VISITE -->
+						<hr class="featurette-divider">
+		
+						<div class="row featurette">
+							<div class="col-md-7">
+								<h2 class="featurette-heading">Heures de visite</h2>
+								<p class="lead">Tous les samedis et dimanches, à l'exception des jours fériés, de 10h00 à 16h00</p>
+								<p class="lead">En semaine uniquement pour les écoles (de tous niveaux d'enseignement) - Groupes - Associations, sur communication téléphonique ou par e-mail et sous réserve d'approbation.</p>
+							</div>
+							<div class="col-md-5">
+								<img src="{% static 'mouseio/images/ABOUT/img1.jpg' %}"
+									style="border-radius: 15px 50px;"
+									class="img-fluid"
+									alt="Image responsive"
+									preserveAspectRatio="xMidYMid slice" 
+									focusable="false"
+									alt="...">
+							</div>
+						</div>
+					</div>
+				</section>
+			</main>
+			<footer class="mt-auto text-white-50">
+				<p>Site Web du <a href="https://www.haf.gr/history/museum/" class="text-white">Musée de l'Armée de l'Air hellénique</a></p>
+			</footer>
+		</div>    
+	</body>
+</html>

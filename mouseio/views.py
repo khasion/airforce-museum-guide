@@ -13,6 +13,8 @@ def index(request, lang="en"):
         return render(request, "mouseio/index-en.html", context)
     if lang == 'de':
         return render(request, "mouseio/index-de.html", context)
+    if lang == 'fr':
+        return render(request, "mouseio/index-fr.html", context)
     else:
         return render(request, "mouseio/index-el.html", context)
 
@@ -33,6 +35,8 @@ def location(request, location_name, lang):
         return render(request, "mouseio/location-en.html", context)
     if lang == 'de':
         return render(request, "mouseio/location-de.html", context)
+    if lang == 'fr':
+        return render(request, "mouseio/location-fr.html", context)
     else:
         return render(request, "mouseio/location-el.html", context)
 
@@ -54,16 +58,20 @@ def description(request, plane_id, lang):
         return render(request, "mouseio/location-en.html", context)
     if lang == 'de':
         return render(request, "mouseio/location-de.html", context)
+    if lang == 'fr':
+        return render(request, 'mouseio/location-fr.html', context)
     else:
         return render(request, "mouseio/location-el.html", context)
 
-def about(request, lang):
+def contact(request, lang):
     if lang == 'en':
-        return render(request, "mouseio/about-en.html")
+        return render(request, "mouseio/contact-en.html")
     if lang == 'de':
-        return render(request, "mouseio/about-de.html")
+        return render(request, "mouseio/contact-de.html")
+    if lang == 'fr':
+        return render(request, "mouseio/contact-fr.html")
     else:
-        return render(request, "mouseio/about-el.html")
+        return render(request, "mouseio/contact-el.html")
 
 
 def export_exhibits_csv(request):

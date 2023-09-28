@@ -1,12 +1,12 @@
 {% load static %}
 <!doctype html>
-<html lang="el" class="h-100">
+<html lang="fr" class="h-100">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="description" content="Home page of the Hellenic Airforce Museum">
-        <meta name="author" content="Ioannis Kasionis, and Bootstrap contributors">
-        <title>Μουσείο Ελληνικής Αεροπορίας</title>
+        <meta name="description" content="Page d'accueil du Musée de l'Armée de l'Air hellénique">
+        <meta name="author" content="Ioannis Kasionis et les contributeurs de Bootstrap">
+        <title>Accueil du Musée</title>
 
         <link rel="stylesheet" href="{% static 'mouseio/style.css' %}">
         <link rel="shortcut icon" type="image/png" href="{% static 'mouseio/favicon.png' %}" >
@@ -24,46 +24,47 @@
                     <!-- Navbar -->
                     <nav class="navbar nav-masthead navbar-expand-md navbar-dark fixed-top bg-dark">
                         <div class="container-fluid">
-                            <a class="navbar-brand" href="/lang=el">
+                            <a class="navbar-brand" href="/lang=fr">
                                 <img src="{% static 'mouseio/images/logo.png' %}" alt="" height="36">
                             </a>
-                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#NavbarToggler" aria-controls="NavbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#NavbarToggler" aria-controls="NavbarToggler" aria-expanded="false" aria-label="Basculer la navigation">
                                 <span class="navbar-toggler-icon"></span>
                             </button>
                             <div class="collapse navbar-collapse" id="NavbarToggler">
-                                <!-- Navbar Items -->
+                                <!-- Éléments de navigation -->
                                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                                     <li class="nav-item">
-                                        <a class="nav-link active" aria-current="page" href="/lang=el">Μουσείο Πολεμικής Αεροπορίας</a>
+                                        <a class="nav-link active" aria-current="page" href="/lang=fr">Musée de l'Armée de l'Air hellénique</a>
                                     </li>
                                     <li class="nav-item dropdown">
-                                        <!-- Exhibits Dropdown -->
+                                        <!-- Menu déroulant des expositions -->
                                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                            Εκθέματα
+                                            Expositions
                                         </a>
                                         <ul class="dropdown-menu dropdown-menu-dark bg-dark" aria-labelledby="navbarDropdown">
-                                            <li class="nav-item"><a class="nav-link dropdown-item" href="/SOUTH/lang=el">Εκθέματα Εξωτερικά Νοτίως του Υπόστεγου ΛΕΡΟΣ</a></li>
-                                            <li class="nav-item"><a class="nav-link dropdown-item" href="/LEROS/lang=el">Εκθέματα Εντός του Υποστέγου ΛΕΡΟΣ</a></li>
-                                            <li class="nav-item"><a class="nav-link dropdown-item" href="/NORTH/lang=el">Εκθέματα Εξωτερικά Βορείως του Υποστέγου ΛΕΡΟΣ</a></li>
+                                            <li class="nav-item"><a class="nav-link dropdown-item" href="/SOUTH/lang=fr">Expositions à l'extérieur au sud de l'abri LEROS</a></li>
+                                            <li class="nav-item"><a class="nav-link dropdown-item" href="/LEROS/lang=fr">Expositions à l'intérieur de l'abri LEROS</a></li>
+                                            <li class="nav-item"><a class="nav-link dropdown-item" href="/NORTH/lang=fr">Expositions à l'extérieur au nord de l'abri LEROS</a></li>
                                         </ul>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="/about/lang=el">Επικοινωνία</a>
+                                        <a class="nav-link" href="/contact/lang=fr">Contact</a>
                                     </li>
                                     <li class="nav-item dropdown">
-                                        <!-- Language Dropdown -->
+                                        <!-- Menu déroulant de la langue -->
                                         <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-											<img src="https://flagcdn.com/gr.svg" width="30" alt="Greece"/> Ελληνικά
-										</a>
-										<ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDropdown">
-											<li><hr class="dropdown-divider" /></li>
-											<li><a class="dropdown-item" href="/lang=en"><img src="https://flagcdn.com/gb.svg" width="30" alt="Greece"/> English</a></li>
-											<li><a class="dropdown-item" href="/lang=de"><img src="https://flagcdn.com/de.svg" width="30" alt="German"/> Deutsch</a></li>
-                                            <li><a class="dropdown-item" href="/lang=fr"><img src="https://flagcdn.com/fr.svg" width="30" alt="France"/> Francaise</a></li>
-											<li><a class="dropdown-item" href="/lang=it"><img src="https://flagcdn.com/it.svg" width="30" alt="Italian"/> Italian</a></li>
-											<li><a class="dropdown-item" href="/lang=esp"><img src="https://flagcdn.com/es.svg" width="30" alt="Spanish"/> Espaniol</a></li>
-											<li><a class="dropdown-item" href="/lang=pol"><img src="https://flagcdn.com/pl.svg" width="30" alt="Polish"/> Polski</a></li>
-										</ul>
+                                            <img src="https://flagcdn.com/fr.svg" width="30" alt="Royaume-Uni" />
+                                            Français
+                                        </a>
+                                        <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDropdown">
+                                            <li><hr class="dropdown-divider" /></li>
+                                            <li><a class="dropdown-item" href="/lang=el"><img src="https://flagcdn.com/gr.svg" width="30" alt="Grec"/> Ελληνικά</a></li>
+                                            <li><a class="dropdown-item" href="/lang=de"><img src="https://flagcdn.com/de.svg" width="30" alt="Allemand"/> Deutsch</a></li>
+                                            <li><a class="dropdown-item" href="/lang=gb"><img src="https://flagcdn.com/gb.svg" width="30" alt="Anglais"/> Anglais</a></li>
+                                            <li><a class="dropdown-item" href="/lang=it"><img src="https://flagcdn.com/it.svg" width="30" alt="Italien"/> Italiano</a></li>
+                                            <li><a class="dropdown-item" href="/lang=esp"><img src="https://flagcdn.com/es.svg" width="30" alt="Espagnol"/> Español</a></li>
+                                            <li><a class="dropdown-item" href="/lang=pol"><img src="https://flagcdn.com/pl.svg" width="30" alt="Polonais"/> Polski</a></li>
+                                        </ul>
                                     </li>
                                 </ul>
                             </div>
@@ -71,35 +72,35 @@
                     </nav>
                 </div>
             </header>
-            <main class="px-3">
+            <main>
                 <!-- Jumbotron -->
                 <div class="jumbotron jumbotron-fluid text-center mt-4 p-5">
                     <div class="container">
-                        <h1 class="display-4">Καλώς ήρθατε στο Μουσείο Πολεμικής Αεροπορίας</h1>
-                        <p class="lead">Εξερευνήστε την πλούσια ιστορία και την κληρονομιά της αεροναυτικής αριστείας.</p>
-                        <a href="/contact/lang=el" class="btn btn-secondary btn-lg">Επικοινωνία</a>
+                        <h1 class="display-4">Bienvenue au Musée de l'Armée de l'Air hellénique</h1>
+                        <p class="lead">Explorez l'histoire riche et l'héritage de l'excellence en aviation.</p>
+                        <a href="/contact/lang=fr" class="btn btn-secondary btn-lg">Contact</a>
                     </div>
                 </div>
                 <hr class="featurette-divider">
                 <div class="container marketing mt-5">
-                    <!-- Three columns of text below the carousel -->
+                    <!-- Trois colonnes de texte sous le carrousel -->
                     <div class="row">
                         {% for location in location_list %}
                         <div class="col-lg-4">
                             <img src="{% static 'mouseio/images/'|add:location.name|add:'/main.jpg' %}"
                                 class="bd-placeholder-img rounded-circle"
                                 width="140" height="140"
-                                alt="Responsive image"
+                                alt="Image responsive"
                                 preserveAspectRatio="xMidYMid slice" 
                                 focusable="false"
                                 alt="...">
                             <h2 class="featurette-heading">{{location.name_trans}}</h2>
-                            <p><a class="btn btn-info" href="/{{location.name}}/lang=el">Περισσότερα &raquo;</a></p>
+                            <p><a class="btn btn-info" href="/{{location.name}}/lang=fr">Plus &raquo;</a></p>
                         </div><!-- /.col-lg-4 -->
                         {% endfor %}
                     </div><!-- /.row -->
                 </div>
-                <!-- START THE FEATURETTES -->
+                <!-- DÉMARRER LES FONCTIONNALITÉS -->
                 {% for location in location_list %}
                 <hr class="featurette-divider">
 
@@ -112,8 +113,8 @@
                         <img src="{% static 'mouseio/images/'|add:location.name|add:'/feat.jpg' %}"
                             style="border-radius: 15px 50px;"
                             class="featurette-img img-fluid"
-                            alt="Responsive image"
-                            preserveAspectRatio="xMidYMid slice"
+                            alt="Image responsive"
+                            preserveAspectRatio="xMidYMid slice" 
                             focusable="false"
                             alt="...">
                     </div>
@@ -121,7 +122,7 @@
                 {% endfor %}
             </main>
             <footer class="mt-5 text-white-50">
-				<p>Website for <a href="https://www.haf.gr/history/museum/" class="text-white">Hellenic Airforce Museum</a></p>
+                <p>Site Web du <a href="https://www.haf.gr/history/museum/" class="text-white">Musée de l'Armée de l'Air hellénique</a></p>
             </footer>
         </div>    
     </body>

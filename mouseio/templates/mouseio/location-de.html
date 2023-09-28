@@ -48,7 +48,7 @@
                                         </ul>
 									</li>
 									<li class="nav-item">
-										<a class="nav-link" href="/about/lang=de">Über uns</a>
+										<a class="nav-link" href="/contact/lang=de">Kontakt</a>
 									</li>
 									<li class="nav-item dropdown">
 										<!-- Language Dropdown -->
@@ -60,6 +60,10 @@
 											<li><hr class="dropdown-divider" /></li>
 											<li><a class="dropdown-item" href="/desc/plane={{target_id}}/lang=el"><img src="https://flagcdn.com/gr.svg" width="30" alt="Griechenland"/> Ελληνικά</a></li>
                                             <li><a class="dropdown-item" href="/desc/plane={{target_id}}/lang=en"><img src="https://flagcdn.com/gb.svg" width="30" alt="Großbritannien"/> English</a></li>
+											<li><a class="dropdown-item" href="/desc/plane={{target_id}}/lang=fr"><img src="https://flagcdn.com/fr.svg" width="30" alt="France"/> Francaise</a></li>
+											<li><a class="dropdown-item" href="/desc/plane={{target_id}}/lang=it"><img src="https://flagcdn.com/it.svg" width="30" alt="Italian"/> Italian</a></li>
+											<li><a class="dropdown-item" href="/desc/plane={{target_id}}/lang=esp"><img src="https://flagcdn.com/es.svg" width="30" alt="Spanish"/> Espaniol</a></li>
+											<li><a class="dropdown-item" href="/desc/plane={{target_id}}/lang=pol"><img src="https://flagcdn.com/pl.svg" width="30" alt="Polish"/> Polski</a></li>
 										</ul>
 									</li>
 								</ul>
@@ -70,12 +74,12 @@
             </header>
 			<main class="px-3">
 				<!-- Jumbotron -->
-                <div class="jumbotron jumbotron-fluid text-center mt-4 p-5">
-                    <div class="container">
+				<div class="jumbotron jumbotron-fluid text-center mt-4 p-5">
+					<div class="container">
 						<h1 class="featurette-heading">{{ location.first.name_trans }}</h1>
-                    </div>
-                </div>				<!-- Featurette carousel -->
-				<hr class="featurette-divider">
+					</div>
+				</div>
+				<!-- Featurette carousel -->
 				<div id="carouselExhibitCaptions" class="carousel slide" data-bs-ride="carousel" data-bs-interval="false">
 					<div class="carousel-indicators">
 						{% for exhibit, short in exhibits %}
@@ -156,6 +160,21 @@
 					</div>
 				</div>
 				{% endfor %}
+				<hr class="featurette-divider">
+				<div class="row featurette d-flex aligns-items-center justify-content-center mb-3">
+					<div class="col-md-4">
+						<p class="lead">{{location.first.text}}</p>
+					</div>
+					<div class="col-md-3">
+						<img src="{% static 'mouseio/images/'|add:location.first.name|add:'/feat.jpg' %}"
+                            style="border-radius: 15px 50px;"
+                            class="featurette-img img-fluid"
+                            alt="Responsive image"
+                            preserveAspectRatio="xMidYMid slice" 
+                            focusable="false"
+                            alt="...">
+					</div>
+				</div>
 			</main>
 			<footer class="mt-auto text-white-50">
 				<p>Website für <a href="https://www.haf.gr/history/museum/" class="text-white">Hellenic Airforce Museum</a></p>

@@ -1,12 +1,12 @@
 {% load static %}
 <!doctype html>
-<html lang="en" class="h-100" data-bs-theme="dark">
+<html lang="fr" class="h-100" data-bs-theme="dark">
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<meta name="description" content="Hellenic Airforce Museum Exhibits">
-        <meta name="author" content="Ioannis Kasionis, and Bootstrap contributors">
-		<title>Museum Exhibits</title>
+		<meta name="description" content="Expositions du Musée de l'Armée de l'Air hellénique">
+        <meta name="author" content="Ioannis Kasionis et les contributeurs de Bootstrap">
+		<title>Expositions du Musée</title>
 
 		<link rel="stylesheet" href="{% static 'mouseio/style.css' %}">
 		<link rel="shortcut icon" type="image/png" href="{% static 'mouseio/favicon.png' %}" >
@@ -23,46 +23,46 @@
 					<!-- Navbar -->
                     <nav class="navbar nav-masthead navbar-expand-md navbar-dark fixed-top bg-dark">
                         <div class="container-fluid">
-							<a class="navbar-brand" href="/lang=en">
+							<a class="navbar-brand" href="/lang=fr">
 								<img src="{% static 'mouseio/images/logo.png' %}" alt="" height="36"/>
 							</a>
-							<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#NavbarToggler" aria-controls="NavbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+							<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#NavbarToggler" aria-controls="NavbarToggler" aria-expanded="false" aria-label="Basculer la navigation">
 								<span class="navbar-toggler-icon"></span>
 							</button>
 							<div class="collapse navbar-collapse" id="NavbarToggler">
-								<!-- Navbar Items -->
+								<!-- Éléments de navigation -->
 								<ul class="navbar-nav me-auto mb-2 mb-lg-0">
 									<li class="nav-item">
-										<a class="nav-link" aria-current="page" href="/lang=en">Hellenic Airforce Museum</a>
+										<a class="nav-link" aria-current="page" href="/lang=fr">Musée de l'Armée de l'Air hellénique</a>
 									</li>
 									<li class="nav-item dropdown">
-										<!-- Exhibits Dropdown -->
+										<!-- Menu déroulant des expositions -->
 										<a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-											Exhibits
+											Expositions
 										</a>
 										<ul class="dropdown-menu dropdown-menu-dark bg-dark" aria-labelledby="navbarDropdown">
-                                            <li class="nav-item"><a class="nav-link dropdown-item" href="/SOUTH/lang=en">Exhibits Outside South of the Shelter LEROS</a></li>
-                                            <li class="nav-item"><a class="nav-link dropdown-item" href="/LEROS/lang=en">Exhibits Inside the Shelter LEROS</a></li>
-                                            <li class="nav-item"><a class="nav-link dropdown-item" href="/NORTH/lang=en">Exhibits Outside North of the Shelter LEROS</a></li>
+                                            <li class="nav-item"><a class="nav-link dropdown-item" href="/SOUTH/lang=fr">Expositions à l'extérieur au sud de l'abri LEROS</a></li>
+                                            <li class="nav-item"><a class="nav-link dropdown-item" href="/LEROS/lang=fr">Expositions à l'intérieur de l'abri LEROS</a></li>
+                                            <li class="nav-item"><a class="nav-link dropdown-item" href="/NORTH/lang=fr">Expositions à l'extérieur au nord de l'abri LEROS</a></li>
                                         </ul>
 									</li>
 									<li class="nav-item">
-										<a class="nav-link" href="/contact/lang=en">Contact</a>
+										<a class="nav-link" href="/contact/lang=fr">Contact</a>
 									</li>
 									<li class="nav-item dropdown">
-										<!-- Language Dropdown -->
+										<!-- Menu déroulant de la langue -->
 										<a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-											<img src="https://flagcdn.com/gb.svg" width="30" alt="United Kingdom" />
-											English
+											<img src="https://flagcdn.com/fr.svg" width="30" alt="Royaume-Uni" />
+											Français
 										</a>
 										<ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDropdown">
 											<li><hr class="dropdown-divider" /></li>
-											<li><a class="dropdown-item" href="/desc/plane={{target_id}}/lang=el"><img src="https://flagcdn.com/gr.svg" width="30" alt="Greek"/> Ελληνικά</a></li>
-											<li><a class="dropdown-item" href="/desc/plane={{target_id}}/lang=de"><img src="https://flagcdn.com/de.svg" width="30" alt="German"/> Deutsch</a></li>
-											<li><a class="dropdown-item" href="/desc/plane={{target_id}}/lang=fr"><img src="https://flagcdn.com/fr.svg" width="30" alt="France"/> Francaise</a></li>
-											<li><a class="dropdown-item" href="/desc/plane={{target_id}}/lang=it"><img src="https://flagcdn.com/it.svg" width="30" alt="Italian"/> Italian</a></li>
-											<li><a class="dropdown-item" href="/desc/plane={{target_id}}/lang=esp"><img src="https://flagcdn.com/es.svg" width="30" alt="Spanish"/> Espaniol</a></li>
-											<li><a class="dropdown-item" href="/desc/plane={{target_id}}/lang=pol"><img src="https://flagcdn.com/pl.svg" width="30" alt="Polish"/> Polski</a></li>
+											<li><a class="dropdown-item" href="/desc/plane={{target_id}}/lang=el"><img src="https://flagcdn.com/gr.svg" width="30" alt="Grec"/> Ελληνικά</a></li>
+											<li><a class="dropdown-item" href="/desc/plane={{target_id}}/lang=de"><img src="https://flagcdn.com/de.svg" width="30" alt="Allemand"/> Deutsch</a></li>
+											<li><a class="dropdown-item" href="/desc/plane={{target_id}}/lang=en"><img src="https://flagcdn.com/gb.svg" width="30" alt="Royaume-Uni"/> English</a></li>
+											<li><a class="dropdown-item" href="/desc/plane={{target_id}}/lang=it"><img src="https://flagcdn.com/it.svg" width="30" alt="Italien"/> Italiano</a></li>
+											<li><a class="dropdown-item" href="/desc/plane={{target_id}}/lang=esp"><img src="https://flagcdn.com/es.svg" width="30" alt="Espagnol"/> Español</a></li>
+											<li><a class="dropdown-item" href="/desc/plane={{target_id}}/lang=pol"><img src="https://flagcdn.com/pl.svg" width="30" alt="Polonais"/> Polski</a></li>
 										</ul>
 									</li>
 								</ul>
@@ -78,14 +78,14 @@
 						<h1 class="featurette-heading">{{ location.first.name_trans }}</h1>
 					</div>
 				</div>
-				<!-- Featurette Carousel -->
+				<!-- Carrousel des expositions -->
 				<div id="carouselExhibitCaptions" class="carousel slide" data-bs-ride="carousel" data-bs-interval="false">
 					<div class="carousel-indicators">
 						{% for exhibit, short in exhibits %}
 						{% if target == exhibit.pk %}
-						<button type="button" data-bs-target="#carouselExhibitCaptions" data-bs-slide-to="{{forloop.counter0}}" class="active" aria-current="true" aria-label="Slide {{forloop.counter}}"></button>
+						<button type="button" data-bs-target="#carouselExhibitCaptions" data-bs-slide-to="{{forloop.counter0}}" class="active" aria-current="true" aria-label="Diapositive {{forloop.counter}}"></button>
 						{% else %}
-					  	<button type="button" data-bs-target="#carouselExhibitCaptions" data-bs-slide-to="{{forloop.counter0}}" aria-label="Slide {{forloop.counter}}"></button>
+					  	<button type="button" data-bs-target="#carouselExhibitCaptions" data-bs-slide-to="{{forloop.counter0}}" aria-label="Diapositive {{forloop.counter}}"></button>
 						{% endif %}
 						{% endfor %}
 					</div>
@@ -93,12 +93,12 @@
 						{% for exhibit, short in exhibits %}
 						{% if target == exhibit.pk %}
 					  	<div class="carousel-item active">
-							<!-- Carousel Item -->
+							<!-- Élément du carrousel -->
 							<a data-bs-toggle="modal" href="#exhibitModal{{forloop.counter0}}">
 								<div class="pick-gradient">
 									<img src="{% static 'mouseio/images/'|add:location.first.name|add:'/'|add:exhibit.img %}"
 										class="img-fluid rounded"
-										alt="Responsive image"
+										alt="Image responsive"
 										alt="...">
 								</div>
 							</a>
@@ -109,12 +109,12 @@
 						</div>
 						{% else %}
 						<div class="carousel-item">
-							<!-- Carousel Item -->
+							<!-- Élément du carrousel -->
 							<a data-bs-toggle="modal" href="#exhibitModal{{forloop.counter0}}">
 								<div class="pick-gradient">
 									<img src="{% static 'mouseio/images/'|add:location.first.name|add:'/'|add:exhibit.img %}"
 										class="img-fluid rounded"
-										alt="Responsive image"
+										alt="Image responsive"
 										alt="...">
 								</div>
 							</a>
@@ -128,11 +128,11 @@
 					</div>
 					<a class="left carousel-control carousel-control-prev" type="button" data-bs-target="#carouselExhibitCaptions" data-bs-slide="prev">
 						<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-						<span class="visually-hidden">Previous</span>
+						<span class="visually-hidden">Précédent</span>
 					</a>
 					<a class="right carousel-control carousel-control-next" type="button" data-bs-target="#carouselExhibitCaptions" data-bs-slide="next">
 						<span class="carousel-control-next-icon" aria-hidden="true"></span>
-						<span class="visually-hidden">Next</span>
+						<span class="visually-hidden">Suivant</span>
 					</a>
 				</div>
 				{% for exhibit, short in exhibits %}
@@ -143,7 +143,7 @@
 							<div class="modal-content bg-dark">
 								<div class="modal-header">
 									<h5 class="modal-title" id="exhibitModalLabel">{{ exhibit.name }}</h5>
-									<button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+									<button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Fermer"></button>
 								</div>
 								<div class="modal-body">
 									{% for desc in descriptions %}
@@ -170,7 +170,7 @@
 						<img src="{% static 'mouseio/images/'|add:location.first.name|add:'/feat.jpg' %}"
                             style="border-radius: 15px 50px;"
                             class="featurette-img img-fluid"
-                            alt="Responsive image"
+                            alt="Image responsive"
                             preserveAspectRatio="xMidYMid slice" 
                             focusable="false"
                             alt="...">
@@ -178,7 +178,7 @@
 				</div>
 			</main>
 			<footer class="mt-auto text-white-50">
-				<p>Website for <a href="https://www.haf.gr/history/museum/" class="text-white">Hellenic Airforce Museum</a></p>
+				<p>Site Web du <a href="https://www.haf.gr/history/museum/" class="text-white">Musée de l'Armée de l'Air hellénique</a></p>
 			</footer>
 		</div>	  
   	</body>
