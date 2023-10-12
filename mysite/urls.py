@@ -21,8 +21,8 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
-    path("", include("mouseio.urls")),
-    path("admin/", admin.site.urls),
+    path('', include("mouseio.urls")),
+    path('admin/', admin.site.urls),
 ]
 
 # add at the last

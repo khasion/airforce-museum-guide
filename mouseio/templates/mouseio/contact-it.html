@@ -1,0 +1,140 @@
+{% load static %}
+<!doctype html>
+<html lang="it" class="h-100">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="Museo dell'Aeronautica Ellenica: Informazioni e Contatti">
+		<meta name="author" content="Ioannis Kasionis e collaboratori di Bootstrap">
+		<title>Museo dell'Aeronautica Ellenica: Informazioni e Contatti</title>
+
+		<link rel="stylesheet" href="{% static 'mouseio/style.css' %}">
+		<link rel="shortcut icon" type="image/png" href="{% static 'mouseio/favicon.png' %}" >
+
+		{% load bootstrap5 %}
+		{% load bootstrap_icons %}
+		{% bootstrap_css %}
+		{% bootstrap_javascript %}
+	</head>
+	<body class="d-flex h-100 text-center text-white">
+		<div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+			<header class="mb-auto">
+				<div>
+					<nav class="navbar nav-masthead navbar-expand-md navbar-dark fixed-top bg-dark">
+                        <div class="container-fluid">
+							<a class="navbar-brand" href="/lang=it">
+								<img src="{% static 'mouseio/images/logo.png' %}" class="" alt="" height="36">
+							</a>
+							<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#NavbarToggler" aria-controls="NavbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+								<span class="navbar-toggler-icon"></span>
+							</button>
+							<div class="collapse navbar-collapse" id="NavbarToggler">
+								<!-- Elementi della Navbar -->
+								<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+									<li class="nav-item">
+										<a class="nav-link" aria-current="page" href="/lang=it">Museo dell'Aeronautica Ellenica</a>
+									</li>
+									<li class="nav-item dropdown">
+										<!-- Menu a tendina Esposizioni -->
+										<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+											Espozizioni
+										</a>
+										<ul class="dropdown-menu dropdown-menu-dark bg-dark" aria-labelledby="navbarDropdown">
+                                            <li class="nav-item"><a class="nav-link dropdown-item" href="/SOUTH/lang=it">Esposizioni all'esterno a sud del Rifugio LEROS</a></li>
+                                            <li class="nav-item"><a class="nav-link dropdown-item" href="/LEROS/lang=it">Esposizioni all'interno del Rifugio LEROS</a></li>
+                                            <li class="nav-item"><a class="nav-link dropdown-item" href="/NORTH/lang=it">Esposizioni all'esterno a nord del Rifugio LEROS</a></li>
+                                        </ul>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link active" href="/contact/lang=it">Contatti</a>
+									</li>
+									<li class="nav-item dropdown">
+										<!-- Menu a tendina Lingua -->
+										<a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+											<img src="https://flagcdn.com/it.svg" width="30" alt="Italiano" />
+											Italiano
+										</a>
+										<ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDropdown">
+											<li><hr class="dropdown-divider" /></li>
+											<li><a class="dropdown-item" href="/contact/lang=el"><img src="https://flagcdn.com/gr.svg" width="30" alt="Grecia"/> Ελληνικά</a></li>
+											<li><a class="dropdown-item" href="/contact/lang=de"><img src="https://flagcdn.com/de.svg" width="30" alt="Germania"/> Tedesco</a></li>
+											<li><a class="dropdown-item" href="/contact/lang=fr"><img src="https://flagcdn.com/fr.svg" width="30" alt="Francia"/> Francese</a></li>
+											<li><a class="dropdown-item" href="/contact/lang=en"><img src="https://flagcdn.com/gb.svg" width="30" alt="Regno Unito"/> Inglese</a></li>
+											<li><a class="dropdown-item" href="/contact/lang=es"><img src="https://flagcdn.com/es.svg" width="30" alt="Spagna"/> Spagnolo</a></li>
+											<li><a class="dropdown-item" href="/contact/lang=pl"><img src="https://flagcdn.com/pl.svg" width="30" alt="Polonia"/> Polacco</a></li>
+										</ul>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</nav>
+				</div>
+			</header>
+			<main class="px-3">
+				<section class="py-5">
+					<div class="container">
+						<!-- FEATURETTE SU DI NOI -->
+						<div class="row featurette">
+							<div class="col-md-7">
+								<h2 class="featurette-heading">A proposito del Museo dell'Aeronautica Ellenica</h2>
+								<p class="lead">Il Museo dell'Aeronautica Ellenica, situato presso la Base Aerea di Dekelia a Tatoi, espone una notevole collezione di reperti dell'aviazione.</p>
+								<p class="lead">La nostra missione è raccogliere, preservare ed esporre i tesori dell'aviazione greca, studiarne la storia e promuovere il valore e lo spirito dell'aviazione attraverso le epoche.</p>
+								<p class="lead">Il museo offre un affascinante viaggio nel tempo, dove i visitatori possono esplorare il coraggio e la gloria dei nostri piloti che hanno difeso la libertà e la sicurezza del nostro paese.</p>
+							</div>
+							<div class="col-md-5">
+								<img src="{% static 'mouseio/images/ABOUT/img2.jpg' %}"
+									alt="Museo dell'Aeronautica Ellenica"
+									class="img-fluid"
+									style="border-radius: 15px 50px;">
+							</div>
+						</div>
+						<!-- FEATURETTE CONTATTI -->
+						<hr class="featurette-divider">
+						<div class="row featurette">
+							<div class="col-md-7">
+                                <h2 class="featurette-heading">Contatti</h2>
+								<ul class="list-unstyled">
+									<li><p class="lead text-start"><b>Indirizzo:</b> Museo HAF, Base Aerea di Dekelia, 13671, Tatoi</p></li>
+									<li><p class="lead text-start"><b>Ufficio Esposizioni:</b> +30 210-8195250, +30210-8195255, +30 210-8195275</p></li>
+									<li><p class="lead text-start"><b>E-mail:</b> museum@haf.gr</p></li>
+									<li><p class="lead text-start"><b>Coordinate GPS:</b> 38.1002204 – 23.7803797,375</p></li>
+								</ul>
+							</div>
+							<div class="col-md-5">
+								<img src="{% static 'mouseio/images/ABOUT/img3.jpg' %}"
+									style="border-radius: 15px 50px;"
+									class="img-fluid"
+									alt="Immagine responsiva"
+									preserveAspectRatio="xMidYMid slice" 
+									focusable="false"
+									alt="...">
+							</div>
+						</div>
+						<!-- FEATURETTE ORARI DI VISITA -->
+						<hr class="featurette-divider">
+						<div class="row featurette">
+							<div class="col-md-7">
+								<h2 class="featurette-heading">Orari di Visita</h2>
+								<p class="lead">Ogni sabato e domenica, esclusi i giorni festivi nazionali coincidenti, dalle 10:00 alle 16:00</p>
+								<p class="lead">Nei giorni feriali solo per scuole (di tutti i livelli educativi) - Gruppi - Associazioni, previa comunicazione telefonica o via e-mail e previa approvazione.</p>
+							</div>
+							<div class="col-md-5">
+								<img src="{% static 'mouseio/images/ABOUT/img1.jpg' %}"
+									style="border-radius: 15px 50px;"
+									class="img-fluid"
+									alt="Immagine responsiva"
+									preserveAspectRatio="xMidYMid slice" 
+									focusable="false"
+									alt="...">
+							</div>
+						</div>
+					</div>
+				</section>
+			</main>
+			<footer class="mt-auto text-white-50">
+				<p>Sito web del <a href="https://www.haf.gr/history/museum/" class="text-white">Museo dell'Aeronautica Ellenica</a></p>
+			</footer>
+		</div>    
+	</body>
+</html>
+

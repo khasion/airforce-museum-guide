@@ -1,0 +1,130 @@
+{% load static %}
+<!doctype html>
+<html lang="es" class="h-100">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Página de inicio del Museo de la Fuerza Aérea Helénica">
+        <meta name="author" content="Ioannis Kasionis y colaboradores de Bootstrap">
+        <title>Página Principal del Museo</title>
+
+        <link rel="stylesheet" href="{% static 'mouseio/style.css' %}">
+        <link rel="shortcut icon" type="image/png" href="{% static 'mouseio/favicon.png' %}" >
+
+
+        {% load bootstrap5 %}
+        {% load bootstrap_icons %}
+        {% bootstrap_css %}
+        {% bootstrap_javascript %}
+    </head>
+    <body class="d-flex text-center text-white h-100">
+        <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+            <header class="mb-auto">
+                <div>
+                    <!-- Barra de navegación -->
+                    <nav class="navbar nav-masthead navbar-expand-md navbar-dark fixed-top bg-dark">
+                        <div class="container-fluid">
+                            <a class="navbar-brand" href="/lang=es">
+                                <img src="{% static 'mouseio/images/logo.png' %}" alt="" height="36">
+                            </a>
+                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#NavbarToggler" aria-controls="NavbarToggler" aria-expanded="false" aria-label="Alternar navegación">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                            <div class="collapse navbar-collapse" id="NavbarToggler">
+                                <!-- Elementos de la barra de navegación -->
+                                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                                    <li class="nav-item">
+                                        <a class="nav-link active" aria-current="page" href="/lang=es">Museo de la Fuerza Aérea Helénica</a>
+                                    </li>
+                                    <li class="nav-item dropdown">
+                                        <!-- Menú desplegable de Exhibiciones -->
+                                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                            Exhibiciones
+                                        </a>
+                                        <ul class="dropdown-menu dropdown-menu-dark bg-dark" aria-labelledby="navbarDropdown">
+                                            <li class="nav-item"><a class="nav-link dropdown-item" href="/SOUTH/lang=es">Exhibiciones al Sur del Refugio LEROS</a></li>
+                                            <li class="nav-item"><a class="nav-link dropdown-item" href="/LEROS/lang=es">Exhibiciones dentro del Refugio LEROS</a></li>
+                                            <li class="nav-item"><a class="nav-link dropdown-item" href="/NORTH/lang=es">Exhibiciones al Norte del Refugio LEROS</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="/contact/lang=es">Contacto</a>
+                                    </li>
+                                    <li class="nav-item dropdown">
+                                        <!-- Menú desplegable de Idioma -->
+                                        <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+											<img src="https://flagcdn.com/es.svg" width="30" alt="Español" />
+											Español
+										</a>
+										<ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDropdown">
+											<li><hr class="dropdown-divider" /></li>
+											<li><a class="dropdown-item" href="/lang=el"><img src="https://flagcdn.com/gr.svg" width="30" alt="Griego"/> Ελληνικά</a></li>
+											<li><a class="dropdown-item" href="/lang=de"><img src="https://flagcdn.com/de.svg" width="30" alt="Alemán"/> Deutsch</a></li>
+                                            <li><a class="dropdown-item" href="/lang=fr"><img src="https://flagcdn.com/fr.svg" width="30" alt="Francés"/> Francais</a></li>
+											<li><a class="dropdown-item" href="/lang=it"><img src="https://flagcdn.com/it.svg" width="30" alt="Italiano"/> Italiano</a></li>
+											<li><a class="dropdown-item" href="/lang=en"><img src="https://flagcdn.com/gb.svg" width="30" alt="Reino Unido"/> English</a></li>
+											<li><a class="dropdown-item" href="/lang=pl"><img src="https://flagcdn.com/pl.svg" width="30" alt="Polaco"/> Polski</a></li>
+										</ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+            </header>
+            <main>
+                <!-- Jumbotron -->
+                <div class="jumbotron jumbotron-fluid text-center mt-4 p-5">
+                    <div class="container">
+                        <h1 class="display-4">Bienvenido al Museo de la Fuerza Aérea Helénica</h1>
+                        <p class="lead">Explora la rica historia y legado de la excelencia en la aviación.</p>
+                        <a href="/contact/lang=es" class="btn btn-secondary btn-lg">Contacto</a>
+                    </div>
+                </div>
+                <hr class="featurette-divider">
+                <div class="container marketing mt-5">
+                    <!-- Tres columnas de texto debajo del carrusel -->
+                    <div class="row">
+                        {% for location in location_list %}
+                        <div class="col-lg-4">
+                            <img src="{% static 'mouseio/images/'|add:location.name|add:'/main.jpg' %}"
+                                class="bd-placeholder-img rounded-circle"
+                                width="140" height="140"
+                                alt="Imagen responsiva"
+                                preserveAspectRatio="xMidYMid slice" 
+                                focusable="false"
+                                alt="...">
+                            <h2 class="featurette-heading">{{location.name_trans}}</h2>
+                            <p><a class="btn btn-info" href="/{{location.name}}/lang=es">Más &raquo;</a></p>
+                        </div><!-- /.col-lg-4 -->
+                        {% endfor %}
+                    </div><!-- /.row -->
+                </div>
+                <!-- COMIENZAN LAS CARACTERÍSTICAS -->
+                {% for location in location_list %}
+                <hr class="featurette-divider">
+
+                <div class="row featurette d-flex aligns-items-center justify-content-center">
+                    <div class="col-md-4">
+                        <h2 class="featurette-heading">{{location.name_trans}}</h2>
+                        <p class="lead">{{location.text}}</p>
+                    </div>
+                    <div class="col-md-4">
+                        <img src="{% static 'mouseio/images/'|add:location.name|add:'/feat.jpg' %}"
+                            style="border-radius: 15px 50px;"
+                            class="featurette-img img-fluid"
+                            alt="Imagen responsiva"
+                            preserveAspectRatio="xMidYMid slice" 
+                            focusable="false"
+                            alt="...">
+                    </div>
+                </div>
+                {% endfor %}
+            </main>
+            <footer class="mt-5 text-white-50">
+				<p>Sitio web del <a href="https://www.haf.gr/history/museum/" class="text-white">Museo de la Fuerza Aérea Helénica</a></p>
+            </footer>
+        </div>    
+    </body>
+</html>
+

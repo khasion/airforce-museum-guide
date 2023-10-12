@@ -1,0 +1,185 @@
+{% load static %}
+<!doctype html>
+<html lang="en" class="h-100" data-bs-theme="dark">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="Esibizioni del Museo dell'Aeronautica Ellenica">
+		<meta name="author" content="Ioannis Kasionis, e collaboratori di Bootstrap">
+		<title>Esibizioni del Museo</title>
+
+		<link rel="stylesheet" href="{% static 'mouseio/style.css' %}">
+		<link rel="shortcut icon" type="image/png" href="{% static 'mouseio/favicon.png' %}" >
+
+		{% load bootstrap5 %}
+		{% load bootstrap_icons %}
+		{% bootstrap_css %}
+		{% bootstrap_javascript %}
+	</head>
+	<body class="d-flex h-100 text-center text-white">
+		<div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+			<header class="mb-auto">
+				<div>
+					<!-- Navbar -->
+					<nav class="navbar nav-masthead navbar-expand-md navbar-dark fixed-top bg-dark">
+						<div class="container-fluid">
+							<a class="navbar-brand" href="/lang=it">
+								<img src="{% static 'mouseio/images/logo.png' %}" alt="" height="36"/>
+							</a>
+							<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#NavbarToggler" aria-controls="NavbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+								<span class="navbar-toggler-icon"></span>
+							</button>
+							<div class="collapse navbar-collapse" id="NavbarToggler">
+								<!-- Elementi Navbar -->
+								<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+									<li class="nav-item">
+										<a class="nav-link" aria-current="page" href="/lang=it">Museo dell'Aeronautica Ellenica</a>
+									</li>
+									<li class="nav-item dropdown">
+										<!-- Menù a discesa delle Esibizioni -->
+										<a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+											Esibizioni
+										</a>
+										<ul class="dropdown-menu dropdown-menu-dark bg-dark" aria-labelledby="navbarDropdown">
+											<li class="nav-item"><a class="nav-link dropdown-item" href="/SOUTH/lang=it">Esibizioni all'esterno a sud del Rifugio LEROS</a></li>
+											<li class="nav-item"><a class="nav-link dropdown-item" href="/LEROS/lang=it">Esibizioni all'interno del Rifugio LEROS</a></li>
+											<li class="nav-item"><a class="nav-link dropdown-item" href="/NORTH/lang=it">Esibizioni all'esterno a nord del Rifugio LEROS</a></li>
+										</ul>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link" href="/contact/lang=it">Contatti</a>
+									</li>
+									<li class="nav-item dropdown">
+										<!-- Menù a discesa delle Lingue -->
+										<a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+											<img src="https://flagcdn.com/it.svg" width="30" alt="Italia" />
+											Italiano
+										</a>
+										<ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDropdown">
+											<li><hr class="dropdown-divider" /></li>
+											<li><a class="dropdown-item" href="/desc/plane={{target_id}}/lang=el"><img src="https://flagcdn.com/gr.svg" width="30" alt="Greco"/> Greco</a></li>
+											<li><a class="dropdown-item" href="/desc/plane={{target_id}}/lang=de"><img src="https://flagcdn.com/de.svg" width="30" alt="Tedesco"/> Tedesco</a></li>
+											<li><a class="dropdown-item" href="/desc/plane={{target_id}}/lang=fr"><img src="https://flagcdn.com/fr.svg" width="30" alt="Francese"/> Francese</a></li>
+											<li><a class="dropdown-item" href="/desc/plane={{target_id}}/lang=en"><img src="https://flagcdn.com/gb.svg" width="30" alt="Regno Unito"/> Inglese</a></li>
+											<li><a class="dropdown-item" href="/desc/plane={{target_id}}/lang=es"><img src="https://flagcdn.com/es.svg" width="30" alt="Spagnolo"/> Spagnolo</a></li>
+											<li><a class="dropdown-item" href="/desc/plane={{target_id}}/lang=pl"><img src="https://flagcdn.com/pl.svg" width="30" alt="Polacco"/> Polacco</a></li>
+										</ul>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</nav>
+				</div>
+			</header>
+			<main class="px-3">
+				<!-- Jumbotron -->
+				<div class="jumbotron jumbotron-fluid text-center mt-4 p-5">
+					<div class="container">
+						<h1 class="featurette-heading">{{ location.first.name_trans }}</h1>
+					</div>
+				</div>
+				<!-- Carosello delle Esibizioni -->
+				<div id="carouselExhibitCaptions" class="carousel slide" data-bs-ride="carousel" data-bs-interval="false">
+					<div class="carousel-indicators">
+						{% for exhibit, short in exhibits %}
+						{% if target == exhibit.pk %}
+						<button type="button" data-bs-target="#carouselExhibitCaptions" data-bs-slide-to="{{forloop.counter0}}" class="active" aria-current="true" aria-label="Diapositiva {{forloop.counter}}"></button>
+						{% else %}
+						<button type="button" data-bs-target="#carouselExhibitCaptions" data-bs-slide-to="{{forloop.counter0}}" aria-label="Diapositiva {{forloop.counter}}"></button>
+						{% endif %}
+						{% endfor %}
+					</div>
+					<div class="carousel-inner">
+						{% for exhibit, short in exhibits %}
+                        {% if target == exhibit.pk %}
+						<div class="carousel-item active">
+							<!-- Elemento del Carosello -->
+							<a data-bs-toggle="modal" href="#exhibitModal{{forloop.counter0}}">
+								<div class="pick-gradient">
+									<img src="{% static 'mouseio/images/'|add:location.first.name|add:'/'|add:exhibit.img %}"
+										class="img-fluid rounded"
+										alt="Immagine responsiva"
+										alt="...">
+								</div>
+							</a>
+							<div class="carousel-caption">
+								<h5>{{exhibit.name}}</h5>
+								<p class="lead d-none d-md-block">{{short}}</p>	
+							</div>
+						</div>
+						{% else %}
+						<div class="carousel-item">
+							<!-- Elemento del Carosello -->
+							<a data-bs-toggle="modal" href="#exhibitModal{{forloop.counter0}}">
+								<div class="pick-gradient">
+									<img src="{% static 'mouseio/images/'|add:location.first.name|add:'/'|add:exhibit.img %}"
+										class="img-fluid rounded"
+										alt="Immagine responsiva"
+										alt="...">
+								</div>
+							</a>
+							<div class="carousel-caption">
+								<h5>{{exhibit.name}}</h5>
+								<p class="lead d-none d-md-block">{{short}}</p>	
+							</div>
+						</div>
+						{% endif %}
+						{% endfor %}
+					</div>
+					<a class="left carousel-control carousel-control-prev" type="button" data-bs-target="#carouselExhibitCaptions" data-bs-slide="prev">
+						<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+						<span class="visually-hidden">Precedente</span>
+					</a>
+					<a class="right carousel-control carousel-control-next" type="button" data-bs-target="#carouselExhibitCaptions" data-bs-slide="next">
+						<span class="carousel-control-next-icon" aria-hidden="true"></span>
+						<span class="visually-hidden">Successiva</span>
+					</a>
+				</div>
+				{% for exhibit, short in exhibits %}
+				<!-- Modale -->
+				<div class="container">
+					<div class="modal fade" id="exhibitModal{{forloop.counter0}}" tabindex="-1" aria-labelledby="exhibitModalLabel" aria-hidden="true">
+						<div class="modal-dialog">
+							<div class="modal-content bg-dark">
+								<div class="modal-header">
+									<h5 class="modal-title" id="exhibitModalLabel">{{ exhibit.name }}</h5>
+									<button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Chiudi"></button>
+								</div>
+								<div class="modal-body">
+									{% for desc in descriptions %}
+										{% if desc.exhibit == exhibit %}
+										<img src="{% static 'mouseio/images/'|add:location.first.name|add:'/'|add:exhibit.img %}"
+											class="img-fluid rounded"
+											alt="...">
+										<hr class="hr"/>
+										<p class="lead text-center">{{ desc.text }}</p>
+										{% endif %}
+									{% endfor %}
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				{% endfor %}
+				<hr class="featurette-divider">
+				<div class="row featurette d-flex aligns-items-center justify-content-center mb-3">
+					<div class="col-md-4">
+						<p class="lead">{{location.first.text}}</p>
+					</div>
+					<div class="col-md-3">
+						<img src="{% static 'mouseio/images/'|add:location.first.name|add:'/feat.jpg' %}"
+							style="border-radius: 15px 50px;"
+							class="featurette-img img-fluid"
+							alt="Immagine responsiva"
+							preserveAspectRatio="xMidYMid slice"
+							focusable="false"
+							alt="...">
+					</div>
+				</div>
+			</main>
+			<footer class="mt-auto text-white-50">
+				<p>Sito web del <a href="https://www.haf.gr/history/museum/" class="text-white">Museo dell'Aeronautica Ellenica</a></p>
+			</footer>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,141 @@
+{% load static %}
+<!doctype html>
+<html lang="en" class="h-100">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="Museo de la Fuerza Aérea Helénica: Acerca de y Contacto">
+		<meta name="author" content="Ioannis Kasionis, y colaboradores de Bootstrap">
+		<title>Museo de la Fuerza Aérea Helénica: Acerca de y Contacto</title>
+
+		<link rel="stylesheet" href="{% static 'mouseio/style.css' %}">
+		<link rel="shortcut icon" type="image/png" href="{% static 'mouseio/favicon.png' %}" >
+
+		{% load bootstrap5 %}
+		{% load bootstrap_icons %}
+		{% bootstrap_css %}
+		{% bootstrap_javascript %}
+	</head>
+	<body class="d-flex h-100 text-center text-white">
+		<div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+			<header class="mb-auto">
+				<div>
+					<nav class="navbar nav-masthead navbar-expand-md navbar-dark fixed-top bg-dark">
+						<div class="container-fluid">
+							<a class="navbar-brand" href="/lang=es">
+								<img src="{% static 'mouseio/images/logo.png' %}" class="" alt="" height="36">
+							</a>
+							<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#NavbarToggler" aria-controls="NavbarToggler" aria-expanded="false" aria-label="Alternar navegación">
+								<span class="navbar-toggler-icon"></span>
+							</button>
+							<div class="collapse navbar-collapse" id="NavbarToggler">
+								<!-- Elementos del menú -->
+								<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+									<li class="nav-item">
+										<a class="nav-link" aria-current="page" href="/lang=es">Museo de la Fuerza Aérea Helénica</a>
+									</li>
+									<li class="nav-item dropdown">
+										<!-- Menú desplegable de Exposiciones -->
+										<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+											Exposiciones
+										</a>
+										<ul class="dropdown-menu dropdown-menu-dark bg-dark" aria-labelledby="navbarDropdown">
+											<li class="nav-item"><a class="nav-link dropdown-item" href="/SOUTH/lang=es">Exposiciones Fuera del Sur del Refugio LEROS</a></li>
+											<li class="nav-item"><a class="nav-link dropdown-item" href="/LEROS/lang=es">Exposiciones Dentro del Refugio LEROS</a></li>
+											<li class="nav-item"><a class="nav-link dropdown-item" href="/NORTH/lang=es">Exposiciones Fuera del Norte del Refugio LEROS</a></li>
+										</ul>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link active" href="/contact/lang=es">Contacto</a>
+									</li>
+									<li class="nav-item dropdown">
+										<!-- Menú desplegable de Idioma -->
+										<a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+											<img src="https://flagcdn.com/es.svg" width="30" alt="Español" />
+											Español
+										</a>
+										<ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDropdown">
+											<li><hr class="dropdown-divider"/></li>
+											<li><a class="dropdown-item" href="/contact/lang=el"><img src="https://flagcdn.com/gr.svg" width="30" alt="Griego"/> Ελληνικά</a></li>
+											<li><a class="dropdown-item" href="/contact/lang=de"><img src="https://flagcdn.com/de.svg" width="30" alt="Alemán"/> Deutsch</a></li>
+											<li><a class="dropdown-item" href="/contact/lang=fr"><img src="https://flagcdn.com/fr.svg" width="30" alt="Francés"/> Francais</a></li>
+											<li><a class="dropdown-item" href="/contact/lang=it"><img src="https://flagcdn.com/it.svg" width="30" alt="Italiano"/> Italiano</a></li>
+											<li><a class="dropdown-item" href="/contact/lang=en"><img src="https://flagcdn.com/gb.svg" width="30" alt="Reino Unido"/> English</a></li>
+											<li><a class="dropdown-item" href="/contact/lang=pl"><img src="https://flagcdn.com/pl.svg" width="30" alt="Polaco"/> Polski</a></li>
+										</ul>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</nav>
+				</div>
+			</header>
+			<main class="px-3">
+				<section class="py-5">
+					<div class="container">
+						<!-- Acerca de FEATURETTE -->
+						<div class="row featurette">
+							<div class="col-md-7">
+								<h2 class="featurette-heading">Acerca del Museo de la Fuerza Aérea Helénica</h2>
+								<p class="lead">El Museo de la Fuerza Aérea Helénica, ubicado en la Base Aérea de Dekelia en Tatoi, exhibe una impresionante colección de artefactos de aviación.</p>
+								<p class="lead">Nuestra misión es reunir, preservar y exhibir los tesoros de la aviación griega, estudiar y documentar su historia y promover el valor y el espíritu de la aviación a lo largo de las edades.</p>
+								<p class="lead">El museo ofrece un fascinante viaje en el tiempo donde los visitantes pueden explorar la valentía y la gloria de nuestros pilotos que defendieron la libertad y la seguridad de nuestro país.</p>
+							</div>
+							<div class="col-md-5">
+								<!-- Agregar una imagen del museo aquí -->
+								<img src="{% static 'mouseio/images/ABOUT/img2.jpg' %}"
+									alt="Museo de la Fuerza Aérea Helénica"
+									class="img-fluid"
+									style="border-radius: 15px 50px;">
+							</div>
+						</div>
+						<!-- FEATURETTE DE CONTACTO -->
+						<hr class="featurette-divider">
+						<div class="row featurette">
+							<div class="col-md-7">
+								<h2 class="featurette-heading">Contacto</h2>
+								<ul class="list-unstyled">
+									<li><p class="lead text-start"><b>Dirección:</b> Museo HAF, Base Aérea Dekelia, 13671, Tatoi</p></li>
+									<li><p class="lead text-start"><b>Oficina de Exposiciones:</b> +30 210-8195250, +30210-8195255, +30 210-8195275</p></li>
+									<li><p class="lead text-start"><b>Correo Electrónico:</b> museum@haf.gr</p></li>
+									<li><p class="lead text-start"><b>Coordenadas GPS:</b> 38.1002204 - 23.7803797,375</p></li>
+								</ul>
+							</div>
+							<div class="col-md-5">
+								<img src="{% static 'mouseio/images/ABOUT/img3.jpg' %}"
+									style="border-radius: 15px 50px;"
+									class="img-fluid"
+									alt="Imagen receptiva"
+									preserveAspectRatio="xMidYMid slice" 
+									focusable="false"
+									alt="...">
+							</div>
+						</div>
+						<!-- FEATURETTE DE VISITA -->
+						<hr class="featurette-divider">
+						<div class="row featurette">
+							<div class="col-md-7">
+								<h2 class="featurette-heading">Horario de Visita</h2>
+								<p class="lead">Cada sábado y domingo, excluyendo días festivos nacionales coincidentes, de 10:00 a 16:00</p>
+								<p class="lead">En días laborables solo para escuelas (de todos los niveles educativos) - Grupos - Asociaciones, previa comunicación por teléfono o correo electrónico y sujeto a aprobación.</p>
+							</div>
+							<div class="col-md-5">
+								<img src="{% static 'mouseio/images/ABOUT/img1.jpg' %}"
+									style="border-radius: 15px 50px;"
+									class="img-fluid"
+									alt="Imagen receptiva"
+									preserveAspectRatio="xMidYMid slice" 
+									focusable="false"
+									alt="...">
+							</div>
+						</div>
+					</div>
+				</section>
+			</main>
+			<footer class="mt-auto text-white-50">
+				<p>Sitio web del <a href="https://www.haf.gr/history/museum/" class="text-white">Museo de la Fuerza Aérea Helénica</a></p>
+			</footer>
+		</div>    
+	</body>
+</html>
+

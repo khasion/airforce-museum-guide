@@ -1,0 +1,129 @@
+{% load static %}
+<!doctype html>
+<html lang="it" class="h-100">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Pagina principale del Museo dell'Aeronautica Ellenica">
+        <meta name="author" content="Ioannis Kasionis e collaboratori di Bootstrap">
+        <title>Homepage del Museo</title>
+
+        <link rel="stylesheet" href="{% static 'mouseio/style.css' %}">
+        <link rel="shortcut icon" type="image/png" href="{% static 'mouseio/favicon.png' %}" >
+
+        {% load bootstrap5 %}
+        {% load bootstrap_icons %}
+        {% bootstrap_css %}
+        {% bootstrap_javascript %}
+    </head>
+    <body class="d-flex text-center text-white h-100">
+        <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+            <header class="mb-auto">
+                <div>
+                    <!-- Navbar -->
+                    <nav class="navbar nav-masthead navbar-expand-md navbar-dark fixed-top bg-dark">
+                        <div class="container-fluid">
+                            <a class="navbar-brand" href="/lang=it">
+                                <img src="{% static 'mouseio/images/logo.png' %}" alt="" height="36">
+                            </a>
+                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#NavbarToggler" aria-controls="NavbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                            <div class="collapse navbar-collapse" id="NavbarToggler">
+                                <!-- Elementi della Navbar -->
+                                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                                    <li class="nav-item">
+                                        <a class="nav-link active" aria-current="page" href="/lang=it">Museo dell'Aeronautica Ellenica</a>
+                                    </li>
+                                    <li class="nav-item dropdown">
+                                        <!-- Menu a tendina Esposizioni -->
+                                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                            Esposizioni
+                                        </a>
+                                        <ul class="dropdown-menu dropdown-menu-dark bg-dark" aria-labelledby="navbarDropdown">
+                                            <li class="nav-item"><a class="nav-link dropdown-item" href="/SOUTH/lang=it">Esposizioni all'esterno a sud del Rifugio LEROS</a></li>
+                                            <li class="nav-item"><a class="nav-link dropdown-item" href="/LEROS/lang=it">Esposizioni all'interno del Rifugio LEROS</a></li>
+                                            <li class="nav-item"><a class="nav-link dropdown-item" href="/NORTH/lang=it">Esposizioni all'esterno a nord del Rifugio LEROS</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="/contact/lang=it">Contatti</a>
+                                    </li>
+                                    <li class="nav-item dropdown">
+                                        <!-- Menu a tendina Lingua -->
+                                        <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                            <img src="https://flagcdn.com/it.svg" width="30" alt="Italia" />
+                                            Italiano
+                                        </a>
+                                        <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDropdown">
+                                            <li><hr class="dropdown-divider" /></li>
+                                            <li><a class="dropdown-item" href="/lang=el"><img src="https://flagcdn.com/gr.svg" width="30" alt="Grecia"/> Greco</a></li>
+                                            <li><a class="dropdown-item" href="/lang=de"><img src="https://flagcdn.com/de.svg" width="30" alt="Germania"/> Tedesco</a></li>
+                                            <li><a class="dropdown-item" href="/lang=fr"><img src="https://flagcdn.com/fr.svg" width="30" alt="Francia"/> Francese</a></li>
+                                            <li><a class="dropdown-item" href="/lang=en"><img src="https://flagcdn.com/gb.svg" width="30" alt="Regno Unito"/> Inglese</a></li>
+                                            <li><a class="dropdown-item" href="/lang=es"><img src="https://flagcdn.com/es.svg" width="30" alt="Spagna"/> Spagnolo</a></li>
+                                            <li><a class="dropdown-item" href="/lang=pl"><img src="https://flagcdn.com/pl.svg" width="30" alt="Polonia"/> Polacco</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+            </header>
+            <main>
+                <!-- Jumbotron -->
+                <div class="jumbotron jumbotron-fluid text-center mt-4 p-5">
+                    <div class="container">
+                        <h1 class="display-4">Benvenuti al Museo dell'Aeronautica Ellenica</h1>
+                        <p class="lead">Esplora la ricca storia e l'eredità dell'eccellenza dell'aviazione.</p>
+                        <a href="/contact/lang=it" class="btn btn-secondary btn-lg">Contatti</a>
+                    </div>
+                </div>
+                <hr class="featurette-divider">
+                <div class="container marketing mt-5">
+                    <!-- Tre colonne di testo sotto il carosello -->
+                    <div class="row">
+                        {% for location in location_list %}
+                        <div class="col-lg-4">
+                            <img src="{% static 'mouseio/images/'|add:location.name|add:'/main.jpg' %}"
+                                class="bd-placeholder-img rounded-circle"
+                                width="140" height="140"
+                                alt="Immagine responsive"
+                                preserveAspectRatio="xMidYMid slice" 
+                                focusable="false"
+                                alt="...">
+                            <h2 class="featurette-heading">{{location.name_trans}}</h2>
+                            <p><a class="btn btn-info" href="/{{location.name}}/lang=it">Maggiori dettagli &raquo;</a></p>
+                        </div><!-- /.col-lg-4 -->
+                        {% endfor %}
+                    </div><!-- /.row -->
+                </div>
+                <!-- INIZIA LE CARATTERISTICHE -->
+                {% for location in location_list %}
+                <hr class="featurette-divider">
+
+                <div class="row featurette d_fless aligns-items-center justify-content-center">
+                    <div class="col-md-4">
+                        <h2 class="featurette-heading">{{location.name_trans}}</h2>
+                        <p class="lead">{{location.text}}</p>
+                    </div>
+                    <div class="col-md-4">
+                        <img src="{% static 'mouseio/images/'|add:location.name|add:'/feat.jpg' %}"
+                            style="border-radius: 15px 50px;"
+                            class="featurette-img img-fluid"
+                            alt="Immagine responsive"
+                            preserveAspectRatio="xMidYMid slice" 
+                            focusable="false"
+                            alt="...">
+                    </div>
+                </div>
+                {% endfor %}
+            </main>
+            <footer class="mt-5 text-white-50">
+                <p>Sito web del <a href="https://www.haf.gr/history/museum/" class="text-white">Museo dell'Aeronautica Ellenica</a></p>
+            </footer>
+        </div>    
+    </body>
+</html>
+
