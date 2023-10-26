@@ -18,9 +18,9 @@ def index(request, lang="en"):
     if lang == 'it':
         return render(request, "mouseio/index-it.html", context)
     if lang == 'es':
-        return render(request, "mouseio/index-es.html")
+        return render(request, "mouseio/index-es.html", context)
     if lang == "pl":
-        return render(request, "mouseio/index-pl.html")
+        return render(request, "mouseio/index-pl.html", context)
     else:
         return render(request, "mouseio/index-el.html", context)
 
@@ -46,9 +46,9 @@ def location(request, location_name, lang):
     if lang == 'it':
         return render(request, "mouseio/location-it.html", context)
     if lang == 'es':
-        return render(request, "mouseio/location-es.html")
+        return render(request, "mouseio/location-es.html", context)
     if lang == "pl":
-        return render(request, "mouseio/location-pl.html")
+        return render(request, "mouseio/location-pl.html", context)
     else:
         return render(request, "mouseio/location-el.html", context)
 
