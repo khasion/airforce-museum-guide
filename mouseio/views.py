@@ -26,8 +26,8 @@ def index(request, lang="en"):
 
 def location(request, location_name, lang):
     location = LocationDescription.objects.filter(name = location_name, lang = lang)
-    exhibits = Exhibit.objects.filter(location = location_name)
-    descriptions = ExhibitDescription.objects.filter(exhibit__in = exhibits, lang = lang)
+    exhibits = Exhibit.objects.filter(location = location_name).order_by('-pk')
+    descriptions = ExhibitDescription.objects.filter(exhibit__in = exhibits, lang = lang).order_by('-pk')
 
     shortened = []
     for i, _ in enumerate(descriptions):
@@ -56,8 +56,8 @@ def location(request, location_name, lang):
 def description(request, plane_id, lang):
     target_exhibit = Exhibit.objects.get(exhibit_ID = plane_id)
     location = LocationDescription.objects.filter(name = target_exhibit.location, lang = lang)
-    exhibits = Exhibit.objects.filter(location = target_exhibit.location)
-    descriptions = ExhibitDescription.objects.filter(exhibit__in = exhibits, lang = lang)
+    exhibits = Exhibit.objects.filter(location = target_exhibit.location).order_by('-pk')
+    descriptions = ExhibitDescription.objects.filter(exhibit__in = exhibits, lang = lang).order_by('-pk')
 
     shortened = []
     for i, _ in enumerate(descriptions):
